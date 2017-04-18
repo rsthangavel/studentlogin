@@ -6,7 +6,7 @@
         <h2 class="mdl-card__title-text">STUDENT LOGIN</h2>
       </div>
       <div class="mdl-card__actions">
-        <form [formGroup]="studentForm" #f="ngForm" (ngSubmit)="studentLogin(studentForm.value,studentForm.valid)">
+        <form [formGroup]="studentForm" #f="ngForm" (ngSubmit)="login(studentForm.value,studentForm.valid)">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{'is-invalid' : (studentForm.controls.studentId.dirty && studentForm.controls.studentId.errors?.required) || (f.submitted && studentForm.controls.studentId.errors)}">
             <input class="mdl-textfield__input" type="text" id="number" pattern="-?[0-9]*(\.[0-9]+)?" formControlName="studentId" >
             <label class="mdl-textfield__label" for="number">student Id</label>
@@ -28,3 +28,4 @@
   <div class="mdl-layout-spacer"></div>
 </div>
 
+{{error | json}}

@@ -11,18 +11,36 @@ export class AuthService{
 
   constructor(private http: Http,  private router: Router){}
   adminLogin(name: string, password: string ) {
- const header = new Headers();
- header.append('Content-Type', 'application/x-www-form-urlencoded');
-   let data = 'adminName='+ name + '&adminPassword=' + password;
+      const header = new Headers();
+      header.append('Content-Type', 'application/x-www-form-urlencoded');
+      let data = 'adminName='+ name + '&adminPassword=' + password;
 
       return this.http.post('http://localhost:3000/api/admin-login', data, {headers: header})
       .map(res =>{
-     let user = res.json();
+      let user = res.json();
      
-     if(user.success && user.token){
+      if(user.success && user.token){
          localStorage.setItem('currentuser', JSON.stringify({user}));
-     }
-     return res.json();
+        }
+        return res.json();
         });
+  }
+  studentLogin(name:string, password:string){
+       const header = new Headers();
+      header.append('Content-Type', 'application/x-www-form-urlencoded');
+      let data = 'adminName='+ name + '&adminPassword=' + password;
+
+      return this.http.post('http://localhost:3000/api/student-login', data, {headers: header})
+      .map(res =>{
+      let user = res.json();
+     
+      if(user.success && user.token){
+         localStorage.setItem('currentuser', JSON.stringify({user}));
+        }
+        return res.json();
+        });
+  }
+  logout(){
+    
   }
 }
