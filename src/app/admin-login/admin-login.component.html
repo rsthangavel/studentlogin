@@ -9,7 +9,7 @@
         <form [formGroup]="adminForm" #f="ngForm" (ngSubmit)="adminValue(adminForm.value,adminForm.valid)">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{'is-invalid' : (adminForm.controls.adminName.touched && adminForm.controls.adminName.errors) || (f.submitted && adminForm.controls.adminName.errors)}">
             <input class="mdl-textfield__input" type="text" id="number"  formControlName="adminName" >
-            <label class="mdl-textfield__label" for="number">student Id</label>
+            <label class="mdl-textfield__label" for="number">Admin Name</label>
             <span class="mdl-textfield__error" *ngIf ="(adminForm.controls.adminName.touched && adminForm.controls.adminName.errors) || (f.submitted && adminForm.controls.adminName.errors)">Name should not be Empty!!!</span>
           </div>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{'is-invalid' : (adminForm.controls.adminPassword.touched && adminForm.controls.adminPassword.errors) || (f.submitted && adminForm.controls.adminPassword.errors)}">
@@ -19,7 +19,7 @@
           </div>
 
           <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-            Button
+            Login Me
           </button>
         </form>
       </div>
@@ -30,3 +30,4 @@
 
 
 
+{{error | json}}

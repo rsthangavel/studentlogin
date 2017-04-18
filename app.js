@@ -13,9 +13,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Point static path to dist
+app.use(express.static(path.join(__dirname, 'dist')));
+app.use('/css', express.static(__dirname + '/node_modules/')); // redirect CSS bootstrap
 
-app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css')); // redirect CSS bootstrap
-app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); // redirect CSS bootstrap
 
 // Set our api routes
 app.use('/api', api);
