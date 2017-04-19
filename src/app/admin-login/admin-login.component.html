@@ -3,7 +3,7 @@
   <div class="mdl-cell mdl-cell--4-col">
     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
       <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">Admin LOGIN</h2>
+        <h2 class="mdl-card__title-text">ADMIN LOGIN</h2>
       </div>
       <div class="mdl-card__actions">
         <form [formGroup]="adminForm" #f="ngForm" (ngSubmit)="adminValue(adminForm.value,adminForm.valid)">
@@ -29,5 +29,6 @@
 </div>
 
 
-
+<div *ngIf="error" color="primary">
 {{error | json}}
+</div>

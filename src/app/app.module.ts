@@ -16,6 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MDL } from './MaterialDesignLiteUpgradeElement';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AuthService } from './service/service';
+
+
 @NgModule({
   declarations: [
     AppComponent,

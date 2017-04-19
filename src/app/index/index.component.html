@@ -53,7 +53,7 @@
     <button md-button>All</button>
     <button md-raised-button>Of</button>
     <button md-raised-button color="primary">The</button>
-    <button md-raised-button color="accent">Buttons</button>
+    <button md-raised-button color="accent" (click)="login()">Buttons</button>
   </md-card>
 
   <span class="done">
@@ -65,7 +65,7 @@
 <md-input-container color="warn">
   <input mdInput placeholder="Favorite food" value="Sushi">
 </md-input-container>
-<div ng-message="required">
+<div ng-message="required" color="warn">
   You must accept the terms of service before you can proceed.
 </div>
 

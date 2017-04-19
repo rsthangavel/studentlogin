@@ -7,7 +7,7 @@
       </div>
       <div class="mdl-card__actions">
         <form [formGroup]="studentForm" #f="ngForm" (ngSubmit)="login(studentForm.value,studentForm.valid)">
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{'is-invalid' : (studentForm.controls.studentId.dirty && studentForm.controls.studentId.errors?.required) || (f.submitted && studentForm.controls.studentId.errors)}">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{'is-invalid' : (studentForm.controls.studentId.touched && studentForm.controls.studentId.errors?.required) || (f.submitted && studentForm.controls.studentId.errors)}">
             <input class="mdl-textfield__input" type="text" id="number" pattern="-?[0-9]*(\.[0-9]+)?" formControlName="studentId" >
             <label class="mdl-textfield__label" for="number">student Id</label>
             <span class="mdl-textfield__error" *ngIf ="(studentForm.controls.studentId.touched && studentForm.controls.studentId.errors?.pattern) || (f.submitted && studentForm.controls.studentId.errors?.pattern)">ID should be number</span>
@@ -19,7 +19,7 @@
             <span class="mdl-textfield__error">Password should not be Empty</span>
           </div>
           <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
-            Button
+            Login Me!
           </button>
         </form>
       </div>

@@ -5,6 +5,7 @@ const express = require('express');
 const router = express.Router();
  bcrypt = require('bcrypt');
  var jwt = require('jsonwebtoken');  
+ var passport = require('passport');
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/student');
 var db = mongoose.connection;
@@ -111,5 +112,8 @@ router.post('/student-login', function(req,res){
     }
   })
 });
+router.post('/admin-dashboard', passport.authenticate('jwt',{session:false}), function(req,res){
+  res.send('');
+})
 
 module.exports = router;

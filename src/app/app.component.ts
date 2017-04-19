@@ -6,4 +6,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+   onSignIn(googleUser){
+    var profile = googleUser.getBasicProfile();
+    console.log(profile);
+  }
 }

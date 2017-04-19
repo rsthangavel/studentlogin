@@ -7,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
-
+ 
   constructor() { }
 
   ngOnInit() {
   }
-
+  onSignIn(googleUser){
+    var profile = googleUser.getBasicProfile();
+    console.log(profile);
+  }
 }
