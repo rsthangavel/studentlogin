@@ -7,7 +7,10 @@ const router = express.Router();
  var jwt = require('jsonwebtoken');  
  var passport = require('passport');
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/student');
+var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }, 
+                replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };       
+ var mongourl = 'mongodb://test:test@ds163940.mlab.com:63940/student';
+mongoose.connect(mongourl,options);
 var db = mongoose.connection;
 db.once("open",function(){
   console.log("Connection Established");
