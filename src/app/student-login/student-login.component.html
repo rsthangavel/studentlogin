@@ -1,12 +1,9 @@
-<div mdl class="mdl-grid">
-  <div class="mdl-layout-spacer"></div>
-  <div class="mdl-cell mdl-cell--4-col">
-    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-      <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">STUDENT LOGIN</h2>
-      </div>
-      <div class="mdl-card__actions">
-        <form [formGroup]="studentForm" #f="ngForm" (ngSubmit)="login(studentForm.value,studentForm.valid)">
+
+<div mdl class="center-position" fxLayout fxLayoutAlign="center">
+  <md-card fxFlex.xs="70%" fxFlex.md="70%" fxFlex.sm="70%" fxFlex.lg="20%" fxFlex.xl="15%">
+   <md-card-title>STUDENT LOGIN</md-card-title>
+   <md-card-content>
+    <form [formGroup]="studentForm" #f="ngForm" (ngSubmit)="login(studentForm.value,studentForm.valid)">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{'is-invalid' : (studentForm.controls.studentId.touched && studentForm.controls.studentId.errors?.required) || (f.submitted && studentForm.controls.studentId.errors)}">
             <input class="mdl-textfield__input" type="text" id="number" pattern="-?[0-9]*(\.[0-9]+)?" formControlName="studentId" >
             <label class="mdl-textfield__label" for="number">student Id</label>
@@ -18,14 +15,14 @@
             <label class="mdl-textfield__label" for="password">password</label>
             <span class="mdl-textfield__error">Password should not be Empty</span>
           </div>
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+          <div>
+          <button  class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
             Login Me!
           </button>
+          </div>
         </form>
-      </div>
-    </div>
-  </div>
-  <div class="mdl-layout-spacer"></div>
+   </md-card-content>
+  </md-card>
 </div>
 
 {{error | json}}

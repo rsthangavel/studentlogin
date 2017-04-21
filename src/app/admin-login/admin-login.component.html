@@ -1,12 +1,10 @@
-<div mdl class="mdl-grid">
-  <div class="mdl-layout-spacer"></div>
-  <div class="mdl-cell mdl-cell--4-col">
-    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-      <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">ADMIN LOGIN</h2>
-      </div>
-      <div class="mdl-card__actions">
-        <form [formGroup]="adminForm" #f="ngForm" (ngSubmit)="adminValue(adminForm.value,adminForm.valid)">
+
+<div mdl class="center-position" fxLayout fxLayoutAlign="center">
+    <md-card fxFlex.xs="70%" fxFlex.md="70%" fxFlex.sm="70%" fxFlex.lg="20%" fxFlex.xl="15%">
+   <md-card-title>ADMIN LOGIN</md-card-title>
+   <md-card-content>
+     {{error | json}}
+      <form [formGroup]="adminForm" #f="ngForm" (ngSubmit)="adminValue(adminForm.value,adminForm.valid)">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{'is-invalid' : (adminForm.controls.adminName.touched && adminForm.controls.adminName.errors) || (f.submitted && adminForm.controls.adminName.errors)}">
             <input class="mdl-textfield__input" type="text" id="number"  formControlName="adminName" >
             <label class="mdl-textfield__label" for="number">Admin Name</label>
@@ -22,13 +20,6 @@
             Login Me
           </button>
         </form>
-      </div>
-    </div>
-  </div>
-  <div class="mdl-layout-spacer"></div>
-</div>
-
-
-<div *ngIf="error" color="primary">
-{{error | json}}
+   </md-card-content>
+    </md-card>
 </div>
