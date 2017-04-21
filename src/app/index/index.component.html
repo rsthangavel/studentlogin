@@ -1,71 +1,11 @@
-<div class="content-grid mdl-grid">
-  <div class="mdl-cell mdl-cell--6-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">
+
+<div class="mtop">
+  <div class="center-position" fxLayout  fxLayoutAlign="center" fxLayoutGap="5%">
     <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" routerLink="/adminlogin">
       ADMIN LOGIN
     </button>
-  </div>
-</div>
-<div class="content-grid mdl-grid">
-  <div class="mdl-cell mdl-cell--6-col mdl-cell--2-col-tablet mdl-cell--2-col-phone">
     <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" routerLink="/studentlogin">
       STUDENT LOGIN
     </button>
-  </div>
+  </div>   
 </div>
-<div class="container"
-     fxLayout
-     fxLayout.xs="column"
-     fxLayoutAlign="center"
-     fxLayoutGap="10px"
-     fxLayoutGap.xs="0">
-  <div class="item item-1" fxFlex="15%">Item 1</div>
-  <div class="item item-2" fxFlex="20%" fxFlexOrder="3">Item 2</div>
-  <div class="item item-3" fxFlex>Item 3</div>
-</div>
-
-<div class="container"
-     fxLayout
-     fxLayout.xs="column"
-     fxLayoutAlign="center"
-     fxLayoutGap="10px"
-     fxLayoutGap.xs="0">
-  <div class="item item-4" fxFlex fxFlexOffset="50px"  fxFlexOffset.xs="0">Item 4</div>
-  <div class="item item-5" fxFlex="200px">Item 5</div>
-</div>
-
-
-<div>
-  <md-toolbar color="primary">
-    <span><md-icon>mood</md-icon></span>
-
-    <span>Yay, Material in Angular 2!</span>
-
-    <button md-icon-button [md-menu-trigger-for]="menu">
-      <md-icon>more_vert</md-icon>
-    </button>
-  </md-toolbar>
-  <md-menu x-position="before" #menu="mdMenu">
-    <button md-menu-item>Option 1</button>
-    <button md-menu-item>Option 2</button>
-  </md-menu>
-
-  <md-card>
-    <button md-button>All</button>
-    <button md-raised-button>Of</button>
-    <button md-raised-button color="primary">The</button>
-    <button md-raised-button color="accent" (click)="login()">Buttons</button>
-  </md-card>
-
-  <span class="done">
-    <button md-fab>
-      <md-icon>check circle</md-icon>
-    </button>
-  </span>
-</div>
-<md-input-container color="warn">
-  <input mdInput placeholder="Favorite food" value="Sushi">
-</md-input-container>
-<div ng-message="required" color="warn">
-  You must accept the terms of service before you can proceed.
-</div>
-

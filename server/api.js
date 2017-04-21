@@ -4,11 +4,11 @@
 const express = require('express');
 const router = express.Router();
  bcrypt = require('bcrypt');
- var jwt = require('jsonwebtoken');  
+ var jwt = require('jsonwebtoken');
  var passport = require('passport');
 const mongoose = require('mongoose');
-var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }, 
-                replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };       
+var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
+                replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };
  var mongourl = 'mongodb://test:test@ds163940.mlab.com:63940/student';
 mongoose.connect(mongourl,options);
 var db = mongoose.connection;
@@ -117,6 +117,12 @@ router.post('/student-login', function(req,res){
 });
 router.post('/admin-dashboard', passport.authenticate('jwt',{session:false}), function(req,res){
   res.send('');
-})
+});
+router.get('/test1',function(req,res){
+ 
+  adminCollection.find({},function(err,docs){
+   res.status(200).json(docs);
+  });
+});
 
 module.exports = router;

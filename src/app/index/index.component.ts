@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OverlayContainer } from '@angular/material';
 
 
 @Component({
@@ -12,8 +13,5 @@ export class IndexComponent implements OnInit {
 
   ngOnInit() {
   }
-  onSignIn(googleUser){
-    var profile = googleUser.getBasicProfile();
-    console.log(profile);
-  }
+ 
 }
