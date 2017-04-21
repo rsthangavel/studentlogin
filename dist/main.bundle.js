@@ -97,7 +97,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Component */])({
         selector: 'app-root',
-        template: __webpack_require__(221),
+        template: __webpack_require__(222),
         styles: [__webpack_require__(214)]
     })
 ], AppComponent);
@@ -116,17 +116,19 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__router__ = __webpack_require__(155);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(153);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__student_login_student_login_component__ = __webpack_require__(97);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__admin_login_admin_login_component__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__admin_view_admin_view_component__ = __webpack_require__(95);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__student_view_student_view_component__ = __webpack_require__(98);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__index_index_component__ = __webpack_require__(96);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_material__ = __webpack_require__(149);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_platform_browser_animations__ = __webpack_require__(151);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__MaterialDesignLiteUpgradeElement__ = __webpack_require__(152);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_flex_layout__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__service_service__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_hammerjs__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_hammerjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_hammerjs__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(153);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__student_login_student_login_component__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__admin_login_admin_login_component__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__admin_view_admin_view_component__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__student_view_student_view_component__ = __webpack_require__(98);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__index_index_component__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_material__ = __webpack_require__(149);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__angular_platform_browser_animations__ = __webpack_require__(151);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__MaterialDesignLiteUpgradeElement__ = __webpack_require__(152);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__angular_flex_layout__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__service_service__ = __webpack_require__(40);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -134,6 +136,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -159,13 +162,16 @@ var AppModule = (function () {
 AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_7__student_login_student_login_component__["a" /* StudentLoginComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__admin_login_admin_login_component__["a" /* AdminLoginComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__admin_view_admin_view_component__["a" /* AdminViewComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__student_view_student_view_component__["a" /* StudentViewComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__index_index_component__["a" /* IndexComponent */],
-            __WEBPACK_IMPORTED_MODULE_14__MaterialDesignLiteUpgradeElement__["a" /* MDL */]
+            __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__student_login_student_login_component__["a" /* StudentLoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__admin_login_admin_login_component__["a" /* AdminLoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__admin_view_admin_view_component__["a" /* AdminViewComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__student_view_student_view_component__["a" /* StudentViewComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__index_index_component__["a" /* IndexComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__MaterialDesignLiteUpgradeElement__["a" /* MDL */]
+        ],
+        entryComponents: [
+            __WEBPACK_IMPORTED_MODULE_10__admin_view_admin_view_component__["a" /* AdminViewComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -173,12 +179,12 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* ReactiveFormsModule */],
             __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__router__["a" /* router */]),
-            __WEBPACK_IMPORTED_MODULE_15__angular_flex_layout__["a" /* FlexLayoutModule */],
-            __WEBPACK_IMPORTED_MODULE_12__angular_material__["a" /* MaterialModule */],
-            __WEBPACK_IMPORTED_MODULE_13__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */]
+            __WEBPACK_IMPORTED_MODULE_16__angular_flex_layout__["a" /* FlexLayoutModule */],
+            __WEBPACK_IMPORTED_MODULE_13__angular_material__["a" /* MaterialModule */],
+            __WEBPACK_IMPORTED_MODULE_14__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */]
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_16__service_service__["a" /* AuthService */]],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
+        providers: [__WEBPACK_IMPORTED_MODULE_17__service_service__["a" /* AuthService */]],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -258,7 +264,7 @@ exports = module.exports = __webpack_require__(10)();
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".sidenav-content{\n    height:1000px;\n}\n.menu{\n    cursor: pointer;\n}", ""]);
 
 // exports
 
@@ -340,49 +346,49 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 219:
+/***/ 220:
 /***/ (function(module, exports) {
 
 module.exports = "\n<div mdl class=\"center-position\" fxLayout fxLayoutAlign=\"center\">\n    <md-card fxFlex.xs=\"70%\" fxFlex.md=\"70%\" fxFlex.sm=\"70%\" fxFlex.lg=\"20%\" fxFlex.xl=\"15%\">\n   <md-card-title>ADMIN LOGIN</md-card-title>\n   <md-card-content>\n     {{error | json}}\n      <form [formGroup]=\"adminForm\" #f=\"ngForm\" (ngSubmit)=\"adminValue(adminForm.value,adminForm.valid)\">\n          <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\" [ngClass]=\"{'is-invalid' : (adminForm.controls.adminName.touched && adminForm.controls.adminName.errors) || (f.submitted && adminForm.controls.adminName.errors)}\">\n            <input class=\"mdl-textfield__input\" type=\"text\" id=\"number\"  formControlName=\"adminName\" >\n            <label class=\"mdl-textfield__label\" for=\"number\">Admin Name</label>\n            <span class=\"mdl-textfield__error\" *ngIf =\"(adminForm.controls.adminName.touched && adminForm.controls.adminName.errors) || (f.submitted && adminForm.controls.adminName.errors)\">Name should not be Empty!!!</span>\n          </div>\n          <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\" [ngClass]=\"{'is-invalid' : (adminForm.controls.adminPassword.touched && adminForm.controls.adminPassword.errors) || (f.submitted && adminForm.controls.adminPassword.errors)}\">\n            <input class=\"mdl-textfield__input\" type=\"password\" id=\"password\" formControlName=\"adminPassword\">\n            <label class=\"mdl-textfield__label\" for=\"password\">password</label>\n            <span class=\"mdl-textfield__error\">Password should not be Empty</span>\n          </div>\n\n          <button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\">\n            Login Me\n          </button>\n        </form>\n   </md-card-content>\n    </md-card>\n</div>"
 
 /***/ }),
 
-/***/ 220:
-/***/ (function(module, exports) {
-
-module.exports = "\n  <button md-raised-button color=\"accent\" (click)=\"logout()\">Logout</button>\n  <md-tab-group>\n  <md-tab label=\"Tab 1\">Content 1</md-tab>\n  <md-tab label=\"Tab 2\">Content 2</md-tab>\n</md-tab-group>"
-
-/***/ }),
-
 /***/ 221:
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>\n"
+module.exports = "\n\n<md-sidenav-container class=\"example-container\">\n  <md-sidenav #sidenav class=\"example-sidenav\">\n   test\n  </md-sidenav>\n\n  <div class=\"sidenav-content\">\n    <md-toolbar color=\"primary\" fxLayout>\n     \n      <md-icon  class=\"menu\" (click)=\"sidenav.open()\">menu</md-icon>\n      <span  fxFlexOffset=\"10px\" >My App</span>\n      <div >\n     <button  md-raised-button color=\"accent\"  fxFlexOffset=\"1300px\" (click)=\"logout()\">Logout</button>\n      </div>\n    </md-toolbar>\n  <md-tab-group>\n  <md-tab label=\"Tab 1\">Content 1</md-tab>\n  <md-tab label=\"Tab 2\">Content 2</md-tab>\n</md-tab-group>\n  </div>\n\n</md-sidenav-container>"
 
 /***/ }),
 
 /***/ 222:
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"mtop\">\n  <div class=\"center-position\" fxLayout  fxLayoutAlign=\"center\" fxLayoutGap=\"5%\">\n    <button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" routerLink=\"/adminlogin\">\n      ADMIN LOGIN\n    </button>\n    <button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\" routerLink=\"/studentlogin\">\n      STUDENT LOGIN\n    </button>\n  </div>   \n</div>"
+module.exports = "<router-outlet></router-outlet>\n"
 
 /***/ }),
 
 /***/ 223:
 /***/ (function(module, exports) {
 
-module.exports = "\n<div mdl class=\"center-position\" fxLayout fxLayoutAlign=\"center\">\n  <md-card fxFlex.xs=\"70%\" fxFlex.md=\"70%\" fxFlex.sm=\"70%\" fxFlex.lg=\"20%\" fxFlex.xl=\"15%\">\n   <md-card-title>STUDENT LOGIN</md-card-title>\n   <md-card-content>\n    <form [formGroup]=\"studentForm\" #f=\"ngForm\" (ngSubmit)=\"login(studentForm.value,studentForm.valid)\">\n          <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\" [ngClass]=\"{'is-invalid' : (studentForm.controls.studentId.touched && studentForm.controls.studentId.errors?.required) || (f.submitted && studentForm.controls.studentId.errors)}\">\n            <input class=\"mdl-textfield__input\" type=\"text\" id=\"number\" pattern=\"-?[0-9]*(\\.[0-9]+)?\" formControlName=\"studentId\" >\n            <label class=\"mdl-textfield__label\" for=\"number\">student Id</label>\n            <span class=\"mdl-textfield__error\" *ngIf =\"(studentForm.controls.studentId.touched && studentForm.controls.studentId.errors?.pattern) || (f.submitted && studentForm.controls.studentId.errors?.pattern)\">ID should be number</span>\n            <span class=\"mdl-textfield__error\" *ngIf =\"(studentForm.controls.studentId.touched && studentForm.controls.studentId.errors?.required) || (f.submitted && studentForm.controls.studentId.errors?.required)\">ID should not be Empty!!!</span>\n          </div>\n          <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\" [ngClass]=\"{'is-invalid' : (studentForm.controls.password.touched && studentForm.controls.password.errors) || (f.submitted && studentForm.controls.password.errors)}\">\n            <input class=\"mdl-textfield__input\" type=\"password\" id=\"password\" formControlName=\"password\">\n            <label class=\"mdl-textfield__label\" for=\"password\">password</label>\n            <span class=\"mdl-textfield__error\">Password should not be Empty</span>\n          </div>\n          <div>\n          <button  class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\">\n            Login Me!\n          </button>\n          </div>\n        </form>\n   </md-card-content>\n  </md-card>\n</div>\n\n{{error | json}}"
+module.exports = "\n<div class=\"mtop\">\n  <div class=\"center-position\" fxLayout  fxLayoutAlign=\"center\" fxLayoutGap=\"5%\">\n    <button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--colored\" routerLink=\"/adminlogin\">\n      ADMIN LOGIN\n    </button>\n    <button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\" routerLink=\"/studentlogin\">\n      STUDENT LOGIN\n    </button>\n  </div>   \n</div>"
 
 /***/ }),
 
 /***/ 224:
 /***/ (function(module, exports) {
 
+module.exports = "\n<div mdl class=\"center-position\" fxLayout fxLayoutAlign=\"center\">\n  <md-card fxFlex.xs=\"70%\" fxFlex.md=\"70%\" fxFlex.sm=\"70%\" fxFlex.lg=\"20%\" fxFlex.xl=\"15%\">\n   <md-card-title>STUDENT LOGIN</md-card-title>\n   <md-card-content>\n    <form [formGroup]=\"studentForm\" #f=\"ngForm\" (ngSubmit)=\"login(studentForm.value,studentForm.valid)\">\n          <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\" [ngClass]=\"{'is-invalid' : (studentForm.controls.studentId.touched && studentForm.controls.studentId.errors?.required) || (f.submitted && studentForm.controls.studentId.errors)}\">\n            <input class=\"mdl-textfield__input\" type=\"text\" id=\"number\" pattern=\"-?[0-9]*(\\.[0-9]+)?\" formControlName=\"studentId\" >\n            <label class=\"mdl-textfield__label\" for=\"number\">student Id</label>\n            <span class=\"mdl-textfield__error\" *ngIf =\"(studentForm.controls.studentId.touched && studentForm.controls.studentId.errors?.pattern) || (f.submitted && studentForm.controls.studentId.errors?.pattern)\">ID should be number</span>\n            <span class=\"mdl-textfield__error\" *ngIf =\"(studentForm.controls.studentId.touched && studentForm.controls.studentId.errors?.required) || (f.submitted && studentForm.controls.studentId.errors?.required)\">ID should not be Empty!!!</span>\n          </div>\n          <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\" [ngClass]=\"{'is-invalid' : (studentForm.controls.password.touched && studentForm.controls.password.errors) || (f.submitted && studentForm.controls.password.errors)}\">\n            <input class=\"mdl-textfield__input\" type=\"password\" id=\"password\" formControlName=\"password\">\n            <label class=\"mdl-textfield__label\" for=\"password\">password</label>\n            <span class=\"mdl-textfield__error\">Password should not be Empty</span>\n          </div>\n          <div>\n          <button  class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\">\n            Login Me!\n          </button>\n          </div>\n        </form>\n   </md-card-content>\n  </md-card>\n</div>\n\n{{error | json}}"
+
+/***/ }),
+
+/***/ 225:
+/***/ (function(module, exports) {
+
 module.exports = "<p>\n  student-view works!\n</p>\n\n<div class=\"container\"\n     fxLayout\n     fxLayout.xs=\"column\"\n     fxLayoutAlign=\"center\"\n     fxLayoutGap=\"10px\"\n     fxLayoutGap.xs=\"0\">\n  <div class=\"item item-1\" fxFlex=\"15%\">Item 1</div>\n  <div class=\"item item-2\" fxFlex=\"20%\" fxFlexOrder=\"3\">Item 2</div>\n  <div class=\"item item-3\" fxFlex>Item 3</div>\n</div>\n\n<div class=\"container\"\n     fxLayout\n     fxLayout.xs=\"column\"\n     fxLayoutAlign=\"center\"\n     fxLayoutGap=\"10px\"\n     fxLayoutGap.xs=\"0\">\n  <div class=\"item item-4\" fxFlex fxFlexOffset=\"50px\"  fxFlexOffset.xs=\"0\">Item 4</div>\n  <div class=\"item item-5\" fxFlex=\"200px\">Item 5</div>\n</div>\n\n\n<div>\n  <md-toolbar color=\"primary\">\n    <span><md-icon>mood</md-icon></span>\n\n    <span>Yay, Material in Angular 2!</span>\n\n    <button md-icon-button [md-menu-trigger-for]=\"menu\">\n      <md-icon>more_vert</md-icon>\n    </button>\n  </md-toolbar>\n  <md-menu x-position=\"before\" #menu=\"mdMenu\">\n    <button md-menu-item>Option 1</button>\n    <button md-menu-item>Option 2</button>\n  </md-menu>\n\n  <md-card>\n    <button md-button>All</button>\n    <button md-raised-button>Of</button>\n    <button md-raised-button color=\"primary\">The</button>\n    <button md-raised-button color=\"accent\">Buttons</button>\n  </md-card>\n\n  <span class=\"done\">\n    <button md-fab>\n      <md-icon>check circle</md-icon>\n    </button>\n  </span>\n</div>\n<md-input-container color=\"warn\">\n  <input mdInput placeholder=\"Favorite food\" value=\"Sushi\">\n</md-input-container>\n<div ng-message=\"required\" color=\"warn\">\n  You must accept the terms of service before you can proceed.\n</div>\n<div class=\"g-signin2\" data-onsuccess=\"onSignIn\">\n    <button>Test</button>\n</div>"
 
 /***/ }),
 
-/***/ 273:
+/***/ 274:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(128);
@@ -420,6 +426,7 @@ var AuthService = (function () {
         this.redirectUrl = 'studentlogin';
     }
     AuthService.prototype.adminLogin = function (name, password) {
+        console.log(name);
         var header = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]();
         header.append('Content-Type', 'application/x-www-form-urlencoded');
         var data = 'adminName=' + name + '&adminPassword=' + password;
@@ -509,8 +516,6 @@ var AdminLoginComponent = (function () {
             //this.http.post('http://localhost:3000/api/admin-login', data,  {headers : header}).map((x) => x.json()).subscribe(data => {localStorage.setItem('token',data); this.redirect();});;
             this.auth.adminLogin(value.adminName, value.adminPassword)
                 .subscribe(function (data) {
-                console.log(data);
-                console.log(data.message);
                 if (data.success) {
                     _this.router.navigate([_this.redirectUrl]);
                 }
@@ -529,7 +534,7 @@ var AdminLoginComponent = (function () {
 AdminLoginComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Component */])({
         selector: 'app-admin-login',
-        template: __webpack_require__(219),
+        template: __webpack_require__(220),
         styles: [__webpack_require__(212)],
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["c" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__service_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__service_service__["a" /* AuthService */]) === "function" && _d || Object])
@@ -585,7 +590,7 @@ var AdminViewComponent = (function () {
 AdminViewComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Component */])({
         selector: 'app-admin-view',
-        template: __webpack_require__(220),
+        template: __webpack_require__(221),
         styles: [__webpack_require__(213)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__service_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__service_service__["a" /* AuthService */]) === "function" && _b || Object])
@@ -623,7 +628,7 @@ var IndexComponent = (function () {
 IndexComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Component */])({
         selector: 'app-index',
-        template: __webpack_require__(222),
+        template: __webpack_require__(223),
         styles: [__webpack_require__(215)]
     }),
     __metadata("design:paramtypes", [])
@@ -690,7 +695,7 @@ var StudentLoginComponent = (function () {
 StudentLoginComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Component */])({
         selector: 'app-student-login',
-        template: __webpack_require__(223),
+        template: __webpack_require__(224),
         styles: [__webpack_require__(216)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__service_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__service_service__["a" /* AuthService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _c || Object])
@@ -727,7 +732,7 @@ var StudentViewComponent = (function () {
 StudentViewComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_11" /* Component */])({
         selector: 'app-student-view',
-        template: __webpack_require__(224),
+        template: __webpack_require__(225),
         styles: [__webpack_require__(217)]
     }),
     __metadata("design:paramtypes", [])
@@ -737,5 +742,5 @@ StudentViewComponent = __decorate([
 
 /***/ })
 
-},[273]);
+},[274]);
 //# sourceMappingURL=main.bundle.js.map
