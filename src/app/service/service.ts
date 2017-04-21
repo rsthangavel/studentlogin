@@ -11,11 +11,12 @@ export class AuthService{
 
   constructor(private http: Http,  private router: Router){}
   adminLogin(name: string, password: string ) {
+    console.log(name);
       const header = new Headers();
       header.append('Content-Type', 'application/x-www-form-urlencoded');
       let data = 'adminName='+ name + '&adminPassword=' + password;
-
-      return this.http.post('http://localhost:4000/api/admin-login', data, {headers: header})
+      let url = window.location.origin;
+      return this.http.post(url+'/api/admin-login', data, {headers: header})
       .map(res =>{
       let user = res.json();
      
@@ -29,7 +30,7 @@ export class AuthService{
        const header = new Headers();
       header.append('Content-Type', 'application/x-www-form-urlencoded');
       let data = 'adminName='+ name + '&adminPassword=' + password;
-      let url = window.location.href;
+      let url = window.location.origin;
       return this.http.post(url+'/api/student-login', data, {headers: header})
       .map(res =>{
       let user = res.json();
