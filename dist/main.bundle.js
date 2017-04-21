@@ -436,7 +436,8 @@ var AuthService = (function () {
         var header = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]();
         header.append('Content-Type', 'application/x-www-form-urlencoded');
         var data = 'adminName=' + name + '&adminPassword=' + password;
-        return this.http.post('http://localhost:4000/api/student-login', data, { headers: header })
+        var url = window.location.href;
+        return this.http.post(url + '/api/student-login', data, { headers: header })
             .map(function (res) {
             var user = res.json();
             if (user.success && user.token) {
