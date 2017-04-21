@@ -403,7 +403,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/icon?family=Ma
 exports.i(__webpack_require__(209), "");
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\nhtml{\n      background : url(/assets/stone.jpeg) no-repeat center center fixed;\n   background-size:  cover;\n \n  \n}\n.center-position{\n    padding-top:15%;\n} ", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\n.center-position{\n    padding-top:15%;\n} ", ""]);
 
 // exports
 
