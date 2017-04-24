@@ -29,7 +29,7 @@ app.get('*', (req, res) => {
 /**
  * Get port from environment and store in Express.
  */
-const port = process.env.PORT || '4000';
+const port = process.env.PORT || '2000';
 app.set('port', port);
 
 /**

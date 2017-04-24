@@ -1,0 +1,9 @@
+.docs-component-viewer-sidenav{
+  box-shadow: 3px 0 6px rgba(0,0,0,0.24);
+    padding-bottom: 64px;
+    width: 240px;
+    min-width: 5%;
+    bottom: 0;
+    overflow: auto;
+    height: 100%;
+}

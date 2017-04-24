@@ -1,0 +1,57 @@
+
+
+<div mdl class="center-position" fxLayout fxLayoutAlign="center">
+    <md-card fxFlex.xs="70%" fxFlex.md="70%" fxFlex.sm="70%" fxFlex.lg="20%" fxFlex.xl="15%">
+   <md-card-title>STUDENT REGISTER</md-card-title>
+   <md-card-content>
+     {{error | json}}
+      <form [formGroup]="studentForm" #f="ngForm" (ngSubmit)="studentValue(studentForm.value,studentForm.valid)">
+          <div  [ngClass]="{'is-invalid' : (studentForm.controls.studentName.dirty && studentForm.controls.studentName.errors) || (f.submitted && studentForm.controls.studentName.errors)}" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="number"  formControlName="studentName" >
+            <label class="mdl-textfield__label" for="number">student Name</label>
+            <span class="mdl-textfield__error" *ngIf ="(studentForm.controls.studentName.touched && studentForm.controls.studentName.errors) || (f.submitted && studentForm.controls.studentName.errors)">Name should not be Empty!!!</span>
+          </div>
+           <span class="mdl-textfield__error" *ngIf ="(studentForm.controls.studentDob.touched && studentForm.controls.studentDob.errors) || (f.submitted && studentForm.controls.studentDob.errors)">ID should not be Empty!!!</span>
+           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{'is-invalid' : (studentForm.controls.studentId.touched && studentForm.controls.studentId.errors) || (f.submitted && studentForm.controls.studentId.errors)}">
+          <material-datepicker placeholder="Select your DOB" [(date)]="yourModelDate" ></material-datepicker>
+          </div>
+        
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{'is-invalid' : (studentForm.controls.studentId.touched && studentForm.controls.studentId.errors) || (f.submitted && studentForm.controls.studentId.errors)}">
+            <input class="mdl-textfield__input" type="text" id="number"  formControlName="studentId" >
+            <label class="mdl-textfield__label" for="number">student RollNumber</label>
+            <span class="mdl-textfield__error" *ngIf ="(studentForm.controls.studentId.touched && studentForm.controls.studentId.errors?.required) || (f.submitted && studentForm.controls.studentId.errors?.required)">ID should not be Empty!!!</span>
+            <span class="mdl-textfield__error" *ngIf ="(studentForm.controls.studentId.dirty && studentForm.controls.studentId.errors?.pattern) || (f.submitted && studentForm.controls.studentId.errors?.pattern)">ID should Number!!!</span>
+          </div>
+           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{'is-invalid' : (studentForm.controls.studentYear.touched && studentForm.controls.studentYear.errors) || (f.submitted && studentForm.controls.studentYear.errors)}">
+            <input class="mdl-textfield__input" type="text" id="password" formControlName="studentYear">
+            <label class="mdl-textfield__label" for="password">Year</label>
+            <span class="mdl-textfield__error">Year should not be Empty</span>
+          </div>
+          <div  class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{'is-invalid' : (studentForm.controls.studentDeparment.touched && studentForm.controls.studentDeparment.errors) || (f.submitted && studentForm.controls.studentDeparment.errors)}"> 
+         <md-select  placeholder="Select Your Deparment" formControlName="studentDeparment">
+            <md-option *ngFor="let dept of deparment" [value]="dept.value" >
+              {{ dept.value }}
+             </md-option>
+          </md-select>
+          <span class="mdl-textfield__error" *ngIf ="(studentForm.controls.studentDeparment.touched && studentForm.controls.studentDeparment.errors?.required) || (f.submitted && studentForm.controls.studentDeparment.errors?.required)">ID should not be Empty!!!</span>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{'is-invalid' : (studentForm.controls.studentPassword.touched && studentForm.controls.studentPassword.errors) || (f.submitted && studentForm.controls.studentPassword.errors)}">
+            <input class="mdl-textfield__input" type="password" id="password" formControlName="studentPassword">
+            <label class="mdl-textfield__label" for="password">password</label>
+            <span class="mdl-textfield__error">Password should not be Empty</span>
+          </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{'is-invalid' : (studentForm.controls.studentcPassword.touched && studentForm.controls.studentcPassword.errors) || (f.submitted && studentForm.controls.studentcPassword.errors)}">
+            <input class="mdl-textfield__input" type="password" id="password" formControlName="studentcPassword">
+            <label class="mdl-textfield__label" for="password">Confirm password</label>
+            <span class="mdl-textfield__error">Confirm Password should not be Empty</span>
+          </div>
+
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+            Login Me
+          </button>
+        </form>
+   </md-card-content>
+    </md-card>
+</div>
+
+  {{ studentForm.controls.studentDeparment.errors | json}}

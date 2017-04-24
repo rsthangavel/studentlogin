@@ -1,6 +1,23 @@
 
-<div mdl class="center-position" fxLayout fxLayoutAlign="center">
-  <md-card fxFlex.xs="70%" fxFlex.md="70%" fxFlex.sm="70%" fxFlex.lg="20%" fxFlex.xl="15%">
+<md-grid-list cols="7" rowHeight="100px">
+  <md-grid-tile [colspan]=7><h3>Welcome to Student Login Portal</h3></md-grid-tile>
+  <md-grid-tile [rowspan]=4 [colspan]=4 >
+  <md-card>
+    <md-card-header>
+        <md-card-title>
+      Test
+    </md-card-title>
+    </md-card-header>
+   
+       <img md-card-image src="assets/stone.jpeg" >
+   
+    <md-card-content>dasf
+   
+    </md-card-content></md-card>
+  </md-grid-tile>
+  <md-grid-tile [rowspan]=3 [colspan]=3>
+    <div mdl  fxLayout fxLayoutAlign="center">
+  <md-card fxFlex="80%">
    <md-card-title>STUDENT LOGIN</md-card-title>
    <md-card-content>
     <form [formGroup]="studentForm" #f="ngForm" (ngSubmit)="login(studentForm.value,studentForm.valid)">
@@ -24,5 +41,18 @@
    </md-card-content>
   </md-card>
 </div>
+
+  </md-grid-tile>
+  <md-grid-tile [rowspan]=1>
+     <button class="mdl-button mdl-js-button mdl-button--flat mdl-button--primary" routerLink="studentregister">New Register</button>
+  </md-grid-tile>
+  <md-grid-tile [colspan]=7 fxLayout fxLayoutAlign="left">
+     <h3 fxFlex>student login</h3>
+    </md-grid-tile>
+    <md-grid-tile [colspan]=7>
+      <p>The Kansas City Cowboys' players participated in the American Association (AA) for two seasons from 1888 to 1889. A professional baseball team based in Kansas City, Missouri, the franchise initially used Association Park as their home field in 1888, then moved to Exposition Park for the 1889 season. Although the Cowboys completed their initial season in last place out of the league's eight teams, there were notable player achievements; on June 6, Henry Porter threw a no-hitter, and on June 13, Barkley hit for the cycle. The franchise's only future Hall of Fame player, "Slidin' Billy" Hamilton (pictured), began his career as a part-time outfielder in 1888, and was their starting right fielder in 1889. He is the franchise's all-time leader in runs scored, bases on balls, and stolen bases. With Bill Watkins as the team's manager in 1889, the team improved to seventh in the league. On November 15, 1889, the Cowboys submitted their resignation from the AA</p>
+    </md-grid-tile>
+</md-grid-list>
+
 
 {{error | json}}

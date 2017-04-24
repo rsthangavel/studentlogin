@@ -11,12 +11,12 @@ export class AuthService{
 
   constructor(private http: Http,  private router: Router){}
   adminLogin(name: string, password: string ) {
-    console.log(name);
+   
       const header = new Headers();
       header.append('Content-Type', 'application/x-www-form-urlencoded');
       let data = 'adminName='+ name + '&adminPassword=' + password;
       let url = window.location.origin;
-      return this.http.post(url+'/api/admin-login', data, {headers: header})
+      return this.http.post('http://localhost:2000/api/admin-login', data, {headers: header})
       .map(res =>{
       let user = res.json();
      
