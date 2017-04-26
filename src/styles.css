@@ -5,6 +5,9 @@
 .center-position{
     padding-top:15%;
 } 
+body, html{
+    height: 1000px;
+}
 /*body{
     background: url(assets/dash.jpg) no-repeat  center center fixed;
     background-size: cover;
