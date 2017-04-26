@@ -21,7 +21,7 @@ import { HeaderComponent } from './header/header.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { DatepickerModule } from 'angular2-material-datepicker'
 
-
+import { Dir } from './student-register/directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +34,9 @@ import { DatepickerModule } from 'angular2-material-datepicker'
     MDL,
     StudentRegisterComponent,
     HeaderComponent,
-    CarouselComponent
+    CarouselComponent,
+    Dir
+
   ],
   entryComponents: [
         DialogComponent  
