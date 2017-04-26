@@ -259,7 +259,7 @@ function updateLink(linkElement, obj) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(217);
+var content = __webpack_require__(218);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(128)(content, {});
@@ -286,7 +286,7 @@ if(false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(218);
+var content = __webpack_require__(219);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(128)(content, {});
@@ -307,7 +307,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 216:
+/***/ 217:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)();
@@ -322,7 +322,7 @@ exports.push([module.i, ".mat-elevation-z0{box-shadow:0 0 0 0 rgba(0,0,0,.2),0 0
 
 /***/ }),
 
-/***/ 217:
+/***/ 218:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)();
@@ -337,23 +337,23 @@ exports.push([module.i, "/**\n * Applies styles for users in high contrast mode.
 
 /***/ }),
 
-/***/ 218:
+/***/ 219:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)();
 // imports
 exports.push([module.i, "@import url(https://fonts.googleapis.com/icon?family=Material+Icons);", ""]);
-exports.i(__webpack_require__(216), "");
+exports.i(__webpack_require__(217), "");
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\n.center-position{\n    padding-top:15%;\n} \n/*body{\n    background: url(assets/dash.jpg) no-repeat  center center fixed;\n    background-size: cover;\n} */", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\n.center-position{\n    padding-top:15%;\n} \nbody, html{\n    height: 1000px;\n}\n/*body{\n    background: url(assets/dash.jpg) no-repeat  center center fixed;\n    background-size: cover;\n} */", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 289:
+/***/ 290:
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(133);
@@ -419,5 +419,5 @@ module.exports = function() {
 
 /***/ })
 
-},[289]);
+},[290]);
 //# sourceMappingURL=styles.bundle.js.map
