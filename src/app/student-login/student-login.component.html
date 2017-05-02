@@ -19,6 +19,7 @@
     <div mdl  fxLayout fxLayoutAlign="center">
   <md-card fxFlex="80%">
    <md-card-title>STUDENT LOGIN</md-card-title>
+   <div sapp="red">{{error}}</div>
    <md-card-content>
     <form [formGroup]="studentForm" #f="ngForm" (ngSubmit)="login(studentForm.value,studentForm.valid)">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{'is-invalid' : (studentForm.controls.studentId.touched && studentForm.controls.studentId.errors?.required) || (f.submitted && studentForm.controls.studentId.errors)}">

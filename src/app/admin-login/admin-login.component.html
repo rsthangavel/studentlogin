@@ -3,12 +3,13 @@
     <md-card fxFlex.xs="70%" fxFlex.md="70%" fxFlex.sm="70%" fxFlex.lg="20%" fxFlex.xl="15%">
    <md-card-title>ADMIN LOGIN</md-card-title>
    <md-card-content>
-     {{error | json}}
+     <div sapp="red">{{error}}</div>
       <form [formGroup]="adminForm" #f="ngForm" (ngSubmit)="adminValue(adminForm.value,adminForm.valid)">
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{'is-invalid' : (adminForm.controls.adminName.touched && adminForm.controls.adminName.errors) || (f.submitted && adminForm.controls.adminName.errors)}">
-            <input class="mdl-textfield__input" type="text" id="number"  formControlName="adminName" >
-            <label class="mdl-textfield__label" for="number">Admin Name</label>
-            <span class="mdl-textfield__error" *ngIf ="(adminForm.controls.adminName.touched && adminForm.controls.adminName.errors) || (f.submitted && adminForm.controls.adminName.errors)">Name should not be Empty!!!</span>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{'is-invalid' : (adminForm.controls.adminId.touched && adminForm.controls.adminId.errors) || (f.submitted && adminForm.controls.adminId.errors)}">
+            <input class="mdl-textfield__input" type="text" id="number" pattern="-?[0-9]*(\.[0-9]+)?" formControlName="adminId" >
+            <label class="mdl-textfield__label" for="number">Admin ID</label>
+            <span class="mdl-textfield__error" *ngIf ="(adminForm.controls.adminId.touched && adminForm.controls.adminId.errors?.required) || (f.submitted && adminForm.controls.adminId.errors?.required)">ID should not be Empty!!!</span>
+             <span class="mdl-textfield__error" *ngIf ="(adminForm.controls.adminId.touched && adminForm.controls.adminId.errors?.pattern) || (f.submitted && adminForm.controls.adminId.errors?.pattern)">ID should be number!!!</span>
           </div>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{'is-invalid' : (adminForm.controls.adminPassword.touched && adminForm.controls.adminPassword.errors) || (f.submitted && adminForm.controls.adminPassword.errors)}">
             <input class="mdl-textfield__input" type="password" id="password" formControlName="adminPassword">

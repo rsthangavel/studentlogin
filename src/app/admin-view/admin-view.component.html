@@ -1,0 +1,23 @@
+
+<md-card>
+<table>
+  <thead>
+      <tr>
+      <th class="mdl-data-table__cell--non-numeric">studentID</th>
+      <th>Student Name</th>
+      <th>Student Year</th>
+      <th>student Deparment</th>
+      <th>student Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr  *ngFor= "let student of allstudent">
+      <td>{{student.studentID}}</td>
+      <td>{{student.studentName}}</td>
+      <td>{{student.studentYear}}</td>
+      <td>{{student.studentDeparment}}</td>
+      <td><button class="button ">View Details</button></td>
+    </tr>
+  </tbody>
+</table>
+</md-card>

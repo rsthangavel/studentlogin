@@ -1,14 +1,19 @@
 
 <app-header (toggleSidenav)="sidenav.toggle()"></app-header>
 <md-sidenav-container class="sidenav-content">
-  <md-sidenav #sidenav class="docs-component-viewer-sidenav"  [mode]="isOver() ? 'over' : 'side'" [opened]="isOver()">
+  <md-sidenav #sidenav class="docs-component-viewer-sidenav"  [mode]="isOver() ? 'over' : 'side'" [opened]="test()">
       <md-nav-list>
           <md-list-item routerLinkActive="active-link" >
-              <md-icon class="icon-position">home</md-icon><span>Home</span>
-          </md-list-item>   
+              <md-icon class="icon-position">home</md-icon><div>Home</div>
+          </md-list-item>
+            <md-list-item *ngIf="user" routerLinkActive="active-link" (click)="logout()">
+               <md-icon class="icon-position">power_settings_new</md-icon><span>Logout</span> 
+          </md-list-item>    
+            
       </md-nav-list>
   </md-sidenav>
   <div class="sidenav-content">
+      
   <router-outlet></router-outlet>
 
   </div>

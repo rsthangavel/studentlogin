@@ -1,15 +1,19 @@
-<div fxLayout fxLayoutAlign="center" fxLayoutGap="100px">
-<h4>PROFILE INFORMATION</h4>
+
+<md-tab-group>
+  <md-tab label="Profile"><div fxLayout fxLayoutAlign="center" fxLayoutGap="100px">
+<h4>{{userDetail.studentName | uppercase }} PROFILE</h4>
 </div>
 <div fxLayout fxLayoutAlign="center">
   <table>
   <tr>
     <th fxFlex="200px" fxFlexOffset="-50px">Name:</th>
-    <td >Thangavel</td>
+    <td >{{userDetail.studentName}}</td>
   </tr>
   <tr>
     <th fxFlex fxFlexOffset="-70px">Deparment:</th>
-    <td>dd</td>
+    <td>{{userDetail.studentDeparment}}</td>
   </tr>
 </table>
-</div>
+</div></md-tab>
+  <md-tab label="Tab 2">Exam Results</md-tab>
+</md-tab-group>

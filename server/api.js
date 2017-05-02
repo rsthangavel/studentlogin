@@ -3,6 +3,7 @@
  */
 const express = require('express');
 var app = express();
+var atob = require('atob');
 const router = express.Router();
 app.set('superSecret', 'Secret');
  bcrypt = require('bcrypt');
@@ -73,25 +74,30 @@ router.get('/', (req, res) => {
     }
   })
 
-}); 
+}); */
 router.post('/admin-login', function(req,res){
-  res.setHeader('Access-Control-Allow-Origin','*');
-  adminCollection.findOne({
-    adminName:req.body.adminName
+    res.header('Access-Control-Allow-Origin', '*');
+   res.header('Access-Control-Request-Method','POST');
+   res.header('Access-Control-Allow-Headers','authorization');
+  console.log(req);
+  // var a=new Buffer(req.headers.authorization,'base64').toString();
+  if(req.body.adminId && req.body.adminPassword){
+  studentReg.findOne({
+    studentID:req.body.adminId, Role:'admin'
   }, function(err,user){
+    console.log(err,user);
     if(err) throw err;
     if(!user){
       res.send({success:false, message:'User not Found'});
     }
     else{
-      user = user.adminName;
      // console.log(user.adminName);
-      adminCollection.findOne({adminName:req.body.adminName, adminPassword:req.body.adminPassword }, function(err, isMatch){
+      studentReg.findOne({studentID:req.body.adminId, studentPassword:req.body.adminPassword }, function(err, isMatch){
         if(isMatch && !err){
-          var token = jwt.sign({
-               data: user
-          },'secret',{ expiresIn: 60*60});
-          res.json({success:true, token: 'JWT'+ token});
+         var token = jwt.sign({id: req.body.studentId, Role: isMatch.Role},'test', {
+          expiresIn: 1440 // expires in 24 hours
+        });
+          res.json({success:true, token: token, Role: isMatch.Role});
         }
         else{
           res.send({success:false, message: 'Password match failed'});
@@ -99,11 +105,14 @@ router.post('/admin-login', function(req,res){
       })
     }
   })
-}); */
+}
+else{
+  res.send({success:false, message:'Error'});
+}
+}); 
 router.post('/student-register',function(req,res){
    res.setHeader('Access-control-Allow-Origin','*');
    var student = {studentName : req.body.studentName, studentID: req.body.studentId, studentYear: req.body.studentYear, studentDeparment : req.body.studentDeparment, studentPassword : req.body.studentPassword }
-   console.log(student);
    var register = new studentReg(student);
    register.save(function(err){
      if(err){
@@ -121,10 +130,17 @@ router.post('/student-register',function(req,res){
    });
 });
 router.post('/student-login', function(req,res){
-    res.setHeader('Access-control-Allow-Origin','*');
+  
+   res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
+   res.header('Access-Control-Request-Method','POST');
+   res.header('Access-Control-Allow-Headers','authorization');
+
+  // var a=new Buffer(req.headers.authorization,'base64').toString();
+  if(req.body.studentId && req.body.studentPassword){
   studentReg.findOne({
     studentID:req.body.studentId
   }, function(err,user){
+    console.log(err,user);
     if(err) throw err;
     if(!user){
       res.send({success:false, message:'User not Found'});
@@ -133,8 +149,6 @@ router.post('/student-login', function(req,res){
      // console.log(user.adminName);
       studentReg.findOne({studentID:req.body.studentId, studentPassword:req.body.studentPassword }, function(err, isMatch){
         if(isMatch && !err){
-          console.log(isMatch);
-          console.log()
          var token = jwt.sign({id: req.body.studentId, Role: isMatch.Role},'test', {
           expiresIn: 1440 // expires in 24 hours
         });
@@ -146,6 +160,10 @@ router.post('/student-login', function(req,res){
       })
     }
   })
+}
+else{
+  res.send({success:false, message:'Error'});
+}
 });
 router.post('/student-detail',function(req,res){
   res.setHeader('Access-control-Allow-Origin','*');

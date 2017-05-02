@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../service/service';
+
 @Component({
   selector: 'app-student-login',
   templateUrl: './student-login.component.html',
@@ -24,10 +25,15 @@ export class StudentLoginComponent implements OnInit {
    this.auth.studentLogin(value.studentId, value.password)
         .subscribe(
           data =>{
-          console.log(data);
+        
             console.log(data.message);
             if(data.success){
-              this.router.navigate([this.redirectUrl]);
+              if(data.Role == 'student'){
+              this.router.navigate(['student']);
+            }
+            else if(data.Role == 'admin'){
+              this.router.navigate(['admin']);
+            }
             }
             else{
               this.error = data.message;

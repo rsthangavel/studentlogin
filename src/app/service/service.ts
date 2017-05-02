@@ -14,7 +14,7 @@ export class AuthService{
    
       const header = new Headers();
       header.append('Content-Type', 'application/x-www-form-urlencoded');
-      let data = 'adminName='+ name + '&adminPassword=' + password;
+      let data = 'adminId='+ name + '&adminPassword=' + password;
       let url = window.location.origin;
       return this.http.post(url+'/api/admin-login', data, {headers: header})
       .map(res =>{
@@ -28,7 +28,10 @@ export class AuthService{
   }
   studentLogin(name:string, password:string){
        const header = new Headers();
+          
+          header.append('Authorization', btoa("{'user':{'name:'password'}"));
       header.append('Content-Type', 'application/x-www-form-urlencoded');
+     
       let data = 'studentId='+ name + '&studentPassword=' + password;
       let url = window.location.origin;
       return this.http.post(url+'/api/student-login', data, {headers: header})

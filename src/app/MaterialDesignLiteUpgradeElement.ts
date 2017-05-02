@@ -1,16 +1,16 @@
 /**
  * Created by thangavel on 17/4/17.
  */
-import {Directive, AfterViewChecked} from '@angular/core';
+import {Directive, AfterContentChecked} from '@angular/core';
 
 declare var componentHandler: any;
 
 @Directive({
   selector: '[mdl]'
 })
-export class MDL implements AfterViewChecked {
+export class MDL implements AfterContentChecked {
 
-  ngAfterViewChecked() {
+  ngAfterContentChecked() {
     if (componentHandler) {
       componentHandler.upgradeAllRegistered();
     }

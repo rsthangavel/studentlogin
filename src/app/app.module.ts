@@ -19,7 +19,9 @@ import { AuthService } from './service/service';
 import { StudentRegisterComponent } from './student-register/student-register.component';
 import { HeaderComponent } from './header/header.component';
 import { CarouselComponent } from './carousel/carousel.component';
-import { DatepickerModule } from 'angular2-material-datepicker'
+import { DialogsService } from './service/dialog.service';
+import { ConfirmDialog } from './confirm';
+import { JsonPipe } from './jsonPipe';
 
 import { Dir } from './student-register/directive';
 @NgModule({
@@ -35,11 +37,13 @@ import { Dir } from './student-register/directive';
     StudentRegisterComponent,
     HeaderComponent,
     CarouselComponent,
-    Dir
+    Dir,
+    ConfirmDialog,
+    JsonPipe
 
   ],
   entryComponents: [
-        DialogComponent  
+        DialogComponent,  ConfirmDialog
   ],
   imports: [
     BrowserModule,
@@ -49,10 +53,9 @@ import { Dir } from './student-register/directive';
     RouterModule.forRoot(router),
     FlexLayoutModule,
     MaterialModule,
-    BrowserAnimationsModule,
-    DatepickerModule
+    BrowserAnimationsModule
   ],
-  providers: [AuthService],
+  providers: [AuthService,DialogsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

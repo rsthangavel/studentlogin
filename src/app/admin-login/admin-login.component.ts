@@ -21,24 +21,27 @@ export class AdminLoginComponent implements OnInit {
 
   ngOnInit() {
     this.adminForm = this.builder.group({
-      adminName: ['', Validators.required],
-      adminPassword: ['', Validators.required]
+      adminId: ['', Validators.compose([Validators.required, Validators.pattern('[0-9]+')])],
+      adminPassword: ['', Validators.compose([Validators.required])]
     });
   }
   adminValue(value, valid) {
+    console.log(value);
     if(valid){
-    let data = 'adminName='+ value.adminName + '&adminPassword=' + value.adminPassword;
-
-    const header = new Headers();
-    header.append('Content-Type', 'application/x-www-form-urlencoded');
+   
     //this.http.post('http://localhost:3000/api/admin-login', data,  {headers : header}).map((x) => x.json()).subscribe(data => {localStorage.setItem('token',data); this.redirect();});;
-      this.auth.adminLogin(value.adminName, value.adminPassword)
+    this.auth.adminLogin(value.adminId, value.adminPassword)
         .subscribe(
           data =>{
-     
         
+            console.log(data.message);
             if(data.success){
-              this.router.navigate([this.redirectUrl]);
+              if(data.Role == 'student'){
+              this.router.navigate(['student']);
+            }
+            else if(data.Role == 'admin'){
+              this.router.navigate(['admin']);
+            }
             }
             else{
               this.error = data.message;
