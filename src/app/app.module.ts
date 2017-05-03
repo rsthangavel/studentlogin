@@ -51,6 +51,7 @@ import { Dir } from './student-register/directive';
     HttpModule,
     ReactiveFormsModule,
     RouterModule.forRoot(router),
+    
     FlexLayoutModule,
     MaterialModule,
     BrowserAnimationsModule

@@ -2,18 +2,7 @@
 <md-grid-list cols="7" rowHeight="100px">
   <md-grid-tile [colspan]=7><h3>Welcome to Student Login Portal</h3></md-grid-tile>
   <md-grid-tile [rowspan]=4 [colspan]=4 >
-  <md-card>
-    <md-card-header>
-        <md-card-title>
-      Test
-    </md-card-title>
-    </md-card-header>
-   
        <img md-card-image src="assets/stone.jpeg" >
-   
-    <md-card-content>dasf
-   
-    </md-card-content></md-card>
   </md-grid-tile>
   <md-grid-tile [rowspan]=3 [colspan]=3>
     <div mdl  fxLayout fxLayoutAlign="center">
@@ -44,8 +33,10 @@
 </div>
 
   </md-grid-tile>
-  <md-grid-tile [rowspan]=1>
+  <md-grid-tile [rowspan]=1 [colspan]=3>
      <button class="mdl-button mdl-js-button mdl-button--flat mdl-button--primary" routerLink="studentregister">New Register</button>
+          <a href="http://localhost:2000/api/auth/google" class="mdl-button mdl-js-button mdl-button--flat mdl-button--accent" (click)="google()">Login with Google</a>
+           <a href="http://localhost:2000/api/auth/facebook" class="mdl-button mdl-js-button mdl-button--flat mdl-color-text--light-blue-900" >Login with Facebook</a>
   </md-grid-tile>
   <md-grid-tile [colspan]=7 fxLayout fxLayoutAlign="left">
      <h3 fxFlex>student login</h3>

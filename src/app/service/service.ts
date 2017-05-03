@@ -44,6 +44,7 @@ export class AuthService{
         return res.json();
         });
   }
+
   studentRegister(value){
       const header = new Headers();
       let data = 'studentName='+value.studentName +'&studentId='+value.studentId+'&studentYear='+value.studentYear+'&studentDeparment='+value.studentDeparment+'&studentPassword='+value.studentPassword;
@@ -70,7 +71,7 @@ export class AuthService{
       let user = res.json();
         console.log(user);
       if(user.success){
-         localStorage.setItem('userdetail', user.success); 
+         localStorage.setItem('userdetail', JSON.stringify({user})); 
         return res.json();
       }
       else{

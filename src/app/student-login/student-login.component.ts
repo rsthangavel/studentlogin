@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import {  ActivatedRoute, Router, Params } from '@angular/router';
 import { AuthService } from '../service/service';
+//import { Http, Headers, Response  } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-student-login',
@@ -12,9 +14,12 @@ export class StudentLoginComponent implements OnInit {
  studentForm: FormGroup;
  redirectUrl:string = 'student';
  error;
-  constructor(private builder: FormBuilder, private auth:AuthService, private router: Router) { }
+  constructor(private builder: FormBuilder, private auth:AuthService, private router: Router,private activate:ActivatedRoute) {
+   
+  }
 
   ngOnInit() {
+     this.activate.queryParams.subscribe(params=>{console.log(params)});
     this.studentForm = this.builder.group({
       studentId : ['', Validators.compose([Validators.required, Validators.pattern('[0-9]+')])],
       password : ['', Validators.required]
@@ -45,5 +50,8 @@ export class StudentLoginComponent implements OnInit {
          
           });
   }
-  }
+}
+google(){
+ 
+}
 }

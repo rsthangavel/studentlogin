@@ -2,6 +2,7 @@
  * Created by thangavel on 17/4/17.
  */
 const express = require('express');
+var mongoose = require('mongoose');
 var app = express();
 var atob = require('atob');
 const router = express.Router();
@@ -9,11 +10,25 @@ app.set('superSecret', 'Secret');
  bcrypt = require('bcrypt');
  var jwt = require('jsonwebtoken');
  var passport = require('passport');
-const mongoose = require('mongoose');
+ require('./config')(passport);
+studentReg = require('./student');
+adminLoginSchema  =  require('./admin');
+
 var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
                 replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };
  var mongourl = 'mongodb://test:test@ds163940.mlab.com:63940/student';
-mongoose.connect(mongourl,options);
+ mongoose.connect(mongourl,options);
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+
+db.once("open",function(){
+  console.log("Connection Established");
+});
+/*const mongoose = require('mongoose');
+var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
+                replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };
+ var mongourl = 'mongodb://test:test@ds163940.mlab.com:63940/student';
+mongoose.createConnection(mongourl,options);
 var db = mongoose.connection;
 db.once("open",function(){
   console.log("Connection Established");
@@ -25,6 +40,9 @@ var adminLoginSchema = mongoose.Schema({
 var studentSchema = mongoose.Schema({
   studentName :{ type:String, requied: true},
   studentID : { type:Number, required: true, unique:true},
+  googleID : { type:Number, unique:true},
+  email : { },
+  token : {},
   Role : { type:String, default: 'student'},
   studentYear : { type:Number, required:true},
   studentDeparment : { type: String,required:true},
@@ -34,9 +52,9 @@ var studentSchema = mongoose.Schema({
 var token;
 var adminCollection = mongoose.model('admin',adminLoginSchema);
 var studentReg = mongoose.model('student',studentSchema);
+*/
 
-
-adminLoginSchema.methods.comparePassword = function(pw, cb){
+/*adminLoginSchema.methods.comparePassword = function(pw, cb){
   bcrypt.compare(pw, this.password, function(err, isMatch){
     if(err){
       return cb(err);
@@ -51,9 +69,9 @@ studentSchema.methods.comparePassword = function(pw, cb){
     }
     cb(null, isMatch);
   })
-};
+}; */
 
-
+router.use(passport.initialize());
 /* GET api listing. */
 router.get('/', (req, res) => {
   res.send('api works');
@@ -79,7 +97,7 @@ router.post('/admin-login', function(req,res){
     res.header('Access-Control-Allow-Origin', '*');
    res.header('Access-Control-Request-Method','POST');
    res.header('Access-Control-Allow-Headers','authorization');
-  console.log(req);
+  console.log(req);v
   // var a=new Buffer(req.headers.authorization,'base64').toString();
   if(req.body.adminId && req.body.adminPassword){
   studentReg.findOne({
@@ -113,10 +131,12 @@ else{
 router.post('/student-register',function(req,res){
    res.setHeader('Access-control-Allow-Origin','*');
    var student = {studentName : req.body.studentName, studentID: req.body.studentId, studentYear: req.body.studentYear, studentDeparment : req.body.studentDeparment, studentPassword : req.body.studentPassword }
+   console.log(student);
    var register = new studentReg(student);
+ 
    register.save(function(err){
      if(err){
-       console.log(err);
+      console.log(err);
       res.json({success:false, message: 'RollNumber already registered with us'}); 
      }
      else{
@@ -124,6 +144,7 @@ router.post('/student-register',function(req,res){
          var token = jwt.sign({id: req.body.studentId, Role: 'student'},'test', {
           expiresIn: 1440 // expires in 24 hours
         });
+      
        res.json({success:true, token:'JWT'+token});
      }
     
@@ -131,7 +152,7 @@ router.post('/student-register',function(req,res){
 });
 router.post('/student-login', function(req,res){
   
-   res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
+   res.header('Access-Control-Allow-Origin', '*');
    res.header('Access-Control-Request-Method','POST');
    res.header('Access-Control-Allow-Headers','authorization');
 
@@ -167,11 +188,12 @@ else{
 });
 router.post('/student-detail',function(req,res){
   res.setHeader('Access-control-Allow-Origin','*');
+  console.log(req.body.token);
   if(req.body.token){
- 
+     
       jwt.verify(req.body.token, 'test', function(err, decoded) {  
          if(err){
-         
+           
            res.send({success:false, message: 'authenticate failed'});
          }
          else{
@@ -202,11 +224,32 @@ router.post('/student-detail',function(req,res){
 router.post('/admin-dashboard', passport.authenticate('jwt',{session:false}), function(req,res){
   res.send('');
 });
-router.get('/test1',function(req,res){
- 
-  adminCollection.find({},function(err,docs){
-   res.status(200).json(docs);
+
+
+router.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
+router.get('/auth/facebook',
+  passport.authenticate('facebook'),
+  function(req, res){});
+  router.get('/auth/facebook/callback',
+  passport.authenticate('facebook', { failureRedirect: '/' }),
+  function(req, res) {
+      console.log(req);
+      var token = jwt.sign({id: req.user.studentID, Role:req.user.Role},'test', {
+          expiresIn: 1440 // expires in 24 hours
+        });
+    res.redirect(307,'/student?token='+token);
   });
-});
+router.get('/auth/google/callback',
+  passport.authenticate('google', { failureRedirect: '/student' }),
+  function(req, res) {
+    console.log(req.user);
+    var token = jwt.sign({id: req.user.studentID, Role:req.user.Role},'test', {
+          expiresIn: 1440 // expires in 24 hours
+        });
+          //res.json({success:true, token: token, Role: req});
+          res.header('authorization',req.user.token);
+    res.redirect(307,'/student?token='+token);
+  });
+
 
 module.exports = router;
