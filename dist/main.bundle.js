@@ -127,14 +127,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var StudentViewComponent = (function () {
-    function StudentViewComponent(router, auth) {
+    function StudentViewComponent(router, auth, activate) {
         this.router = router;
         this.auth = auth;
+        this.activate = activate;
         this.user = true;
         this.userDetail = {};
     }
     StudentViewComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.activate.queryParams.subscribe(function (params) { _this.token = params['token']; console.log(params['token']); });
+        console.log(this.token);
         if (localStorage.getItem('currentuser')) {
             var user = JSON.parse(localStorage.getItem('currentuser'));
             if (user.user.success) {
@@ -149,6 +152,18 @@ var StudentViewComponent = (function () {
                 }, function (error) {
                 });
             }
+        }
+        else if (this.token) {
+            this.auth.getStudentDetail(this.token)
+                .subscribe(function (data) {
+                if (data.success) {
+                    _this.userDetail = data.message;
+                }
+                else {
+                    _this.error = data.message;
+                }
+            }, function (error) {
+            });
         }
         else {
             this.router.navigate(['']);
@@ -166,10 +181,10 @@ StudentViewComponent = __decorate([
         template: __webpack_require__(238),
         styles: [__webpack_require__(227)]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__service_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__service_service__["a" /* AuthService */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__service_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__service_service__["a" /* AuthService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _c || Object])
 ], StudentViewComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=student-view.component.js.map
 
 /***/ }),
@@ -278,7 +293,7 @@ var AppComponent = (function () {
         this.user = false;
         this.hov = false;
         this.router.events.subscribe(function () {
-            if (localStorage.getItem('currentuser')) {
+            if (localStorage.getItem('currentuser') || localStorage.getItem('userdetail')) {
                 _this.user = true;
             }
             else {
@@ -843,7 +858,7 @@ var AuthService = (function () {
             var user = res.json();
             console.log(user);
             if (user.success) {
-                localStorage.setItem('userdetail', user.success);
+                localStorage.setItem('userdetail', JSON.stringify({ user: user }));
                 return res.json();
             }
             else {
@@ -1073,7 +1088,7 @@ module.exports = "\n\n\n<h1>Welcome to Student Login Portal!!!</h1>\n<div class=
 /***/ 236:
 /***/ (function(module, exports) {
 
-module.exports = "\n<md-grid-list cols=\"7\" rowHeight=\"100px\">\n  <md-grid-tile [colspan]=7><h3>Welcome to Student Login Portal</h3></md-grid-tile>\n  <md-grid-tile [rowspan]=4 [colspan]=4 >\n  <md-card>\n    <md-card-header>\n        <md-card-title>\n      Test\n    </md-card-title>\n    </md-card-header>\n   \n       <img md-card-image src=\"assets/stone.jpeg\" >\n   \n    <md-card-content>dasf\n   \n    </md-card-content></md-card>\n  </md-grid-tile>\n  <md-grid-tile [rowspan]=3 [colspan]=3>\n    <div mdl  fxLayout fxLayoutAlign=\"center\">\n  <md-card fxFlex=\"80%\">\n   <md-card-title>STUDENT LOGIN</md-card-title>\n   <div sapp=\"red\">{{error}}</div>\n   <md-card-content>\n    <form [formGroup]=\"studentForm\" #f=\"ngForm\" (ngSubmit)=\"login(studentForm.value,studentForm.valid)\">\n          <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\" [ngClass]=\"{'is-invalid' : (studentForm.controls.studentId.touched && studentForm.controls.studentId.errors?.required) || (f.submitted && studentForm.controls.studentId.errors)}\">\n            <input class=\"mdl-textfield__input\" type=\"text\" id=\"number\" pattern=\"-?[0-9]*(\\.[0-9]+)?\" formControlName=\"studentId\" >\n            <label class=\"mdl-textfield__label\" for=\"number\">student Id</label>\n            <span class=\"mdl-textfield__error\" *ngIf =\"(studentForm.controls.studentId.touched && studentForm.controls.studentId.errors?.pattern) || (f.submitted && studentForm.controls.studentId.errors?.pattern)\">ID should be number</span>\n            <span class=\"mdl-textfield__error\" *ngIf =\"(studentForm.controls.studentId.touched && studentForm.controls.studentId.errors?.required) || (f.submitted && studentForm.controls.studentId.errors?.required)\">ID should not be Empty!!!</span>\n          </div>\n          <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\" [ngClass]=\"{'is-invalid' : (studentForm.controls.password.touched && studentForm.controls.password.errors) || (f.submitted && studentForm.controls.password.errors)}\">\n            <input class=\"mdl-textfield__input\" type=\"password\" id=\"password\" formControlName=\"password\">\n            <label class=\"mdl-textfield__label\" for=\"password\">password</label>\n            <span class=\"mdl-textfield__error\">Password should not be Empty</span>\n          </div>\n          <div>\n          <button  class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\">\n            Login Me!\n          </button>\n          </div>\n        </form>\n   </md-card-content>\n  </md-card>\n</div>\n\n  </md-grid-tile>\n  <md-grid-tile [rowspan]=1>\n     <button class=\"mdl-button mdl-js-button mdl-button--flat mdl-button--primary\" routerLink=\"studentregister\">New Register</button>\n  </md-grid-tile>\n  <md-grid-tile [colspan]=7 fxLayout fxLayoutAlign=\"left\">\n     <h3 fxFlex>student login</h3>\n    </md-grid-tile>\n    <md-grid-tile [colspan]=7>\n      <p>The Kansas City Cowboys' players participated in the American Association (AA) for two seasons from 1888 to 1889. A professional baseball team based in Kansas City, Missouri, the franchise initially used Association Park as their home field in 1888, then moved to Exposition Park for the 1889 season. Although the Cowboys completed their initial season in last place out of the league's eight teams, there were notable player achievements; on June 6, Henry Porter threw a no-hitter, and on June 13, Barkley hit for the cycle. The franchise's only future Hall of Fame player, \"Slidin' Billy\" Hamilton (pictured), began his career as a part-time outfielder in 1888, and was their starting right fielder in 1889. He is the franchise's all-time leader in runs scored, bases on balls, and stolen bases. With Bill Watkins as the team's manager in 1889, the team improved to seventh in the league. On November 15, 1889, the Cowboys submitted their resignation from the AA</p>\n    </md-grid-tile>\n</md-grid-list>\n\n\n{{error | json}}"
+module.exports = "\n<md-grid-list cols=\"7\" rowHeight=\"100px\">\n  <md-grid-tile [colspan]=7><h3>Welcome to Student Login Portal</h3></md-grid-tile>\n  <md-grid-tile [rowspan]=4 [colspan]=4 >\n       <img md-card-image src=\"assets/stone.jpeg\" >\n  </md-grid-tile>\n  <md-grid-tile [rowspan]=3 [colspan]=3>\n    <div mdl  fxLayout fxLayoutAlign=\"center\">\n  <md-card fxFlex=\"80%\">\n   <md-card-title>STUDENT LOGIN</md-card-title>\n   <div sapp=\"red\">{{error}}</div>\n   <md-card-content>\n    <form [formGroup]=\"studentForm\" #f=\"ngForm\" (ngSubmit)=\"login(studentForm.value,studentForm.valid)\">\n          <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\" [ngClass]=\"{'is-invalid' : (studentForm.controls.studentId.touched && studentForm.controls.studentId.errors?.required) || (f.submitted && studentForm.controls.studentId.errors)}\">\n            <input class=\"mdl-textfield__input\" type=\"text\" id=\"number\" pattern=\"-?[0-9]*(\\.[0-9]+)?\" formControlName=\"studentId\" >\n            <label class=\"mdl-textfield__label\" for=\"number\">student Id</label>\n            <span class=\"mdl-textfield__error\" *ngIf =\"(studentForm.controls.studentId.touched && studentForm.controls.studentId.errors?.pattern) || (f.submitted && studentForm.controls.studentId.errors?.pattern)\">ID should be number</span>\n            <span class=\"mdl-textfield__error\" *ngIf =\"(studentForm.controls.studentId.touched && studentForm.controls.studentId.errors?.required) || (f.submitted && studentForm.controls.studentId.errors?.required)\">ID should not be Empty!!!</span>\n          </div>\n          <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\" [ngClass]=\"{'is-invalid' : (studentForm.controls.password.touched && studentForm.controls.password.errors) || (f.submitted && studentForm.controls.password.errors)}\">\n            <input class=\"mdl-textfield__input\" type=\"password\" id=\"password\" formControlName=\"password\">\n            <label class=\"mdl-textfield__label\" for=\"password\">password</label>\n            <span class=\"mdl-textfield__error\">Password should not be Empty</span>\n          </div>\n          <div>\n          <button  class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\">\n            Login Me!\n          </button>\n          </div>\n        </form>\n   </md-card-content>\n  </md-card>\n</div>\n\n  </md-grid-tile>\n  <md-grid-tile [rowspan]=1 [colspan]=3>\n     <button class=\"mdl-button mdl-js-button mdl-button--flat mdl-button--primary\" routerLink=\"studentregister\">New Register</button>\n          <a href=\"http://localhost:2000/api/auth/google\" class=\"mdl-button mdl-js-button mdl-button--flat mdl-button--accent\" (click)=\"google()\">Login with Google</a>\n           <a href=\"http://localhost:2000/api/auth/facebook\" class=\"mdl-button mdl-js-button mdl-button--flat mdl-color-text--light-blue-900\" >Login with Facebook</a>\n  </md-grid-tile>\n  <md-grid-tile [colspan]=7 fxLayout fxLayoutAlign=\"left\">\n     <h3 fxFlex>student login</h3>\n    </md-grid-tile>\n    <md-grid-tile [colspan]=7>\n      <p>The Kansas City Cowboys' players participated in the American Association (AA) for two seasons from 1888 to 1889. A professional baseball team based in Kansas City, Missouri, the franchise initially used Association Park as their home field in 1888, then moved to Exposition Park for the 1889 season. Although the Cowboys completed their initial season in last place out of the league's eight teams, there were notable player achievements; on June 6, Henry Porter threw a no-hitter, and on June 13, Barkley hit for the cycle. The franchise's only future Hall of Fame player, \"Slidin' Billy\" Hamilton (pictured), began his career as a part-time outfielder in 1888, and was their starting right fielder in 1889. He is the franchise's all-time leader in runs scored, bases on balls, and stolen bases. With Bill Watkins as the team's manager in 1889, the team improved to seventh in the league. On November 15, 1889, the Cowboys submitted their resignation from the AA</p>\n    </md-grid-tile>\n</md-grid-list>\n\n\n{{error | json}}"
 
 /***/ }),
 
@@ -1374,13 +1389,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var StudentLoginComponent = (function () {
-    function StudentLoginComponent(builder, auth, router) {
+    function StudentLoginComponent(builder, auth, router, activate) {
         this.builder = builder;
         this.auth = auth;
         this.router = router;
+        this.activate = activate;
         this.redirectUrl = 'student';
     }
     StudentLoginComponent.prototype.ngOnInit = function () {
+        this.activate.queryParams.subscribe(function (params) { console.log(params); });
         this.studentForm = this.builder.group({
             studentId: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].pattern('[0-9]+')])],
             password: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required]
@@ -1407,6 +1424,8 @@ var StudentLoginComponent = (function () {
             });
         }
     };
+    StudentLoginComponent.prototype.google = function () {
+    };
     return StudentLoginComponent;
 }());
 StudentLoginComponent = __decorate([
@@ -1415,10 +1434,10 @@ StudentLoginComponent = __decorate([
         template: __webpack_require__(236),
         styles: [__webpack_require__(225)]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__service_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__service_service__["a" /* AuthService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__service_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__service_service__["a" /* AuthService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _d || Object])
 ], StudentLoginComponent);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=student-login.component.js.map
 
 /***/ })
