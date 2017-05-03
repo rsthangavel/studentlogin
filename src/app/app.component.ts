@@ -16,7 +16,7 @@ export class AppComponent {
   hov:boolean = false;
   @ViewChild('start') start;
   constructor(sanitizer: DomSanitizer, private router: Router, private dialogsService: DialogsService,private auth:AuthService){
-     this.router.events.subscribe(()=> {if(localStorage.getItem('currentuser')){
+     this.router.events.subscribe(()=> {if(localStorage.getItem('currentuser') || localStorage.getItem('userdetail')){
       this.user = true; 
     }
     else{
