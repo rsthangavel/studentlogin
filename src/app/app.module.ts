@@ -22,6 +22,8 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { DialogsService } from './service/dialog.service';
 import { ConfirmDialog } from './confirm';
 import { JsonPipe } from './jsonPipe';
+import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
+import { ImageCropperComponent, CropperSettings  } from 'ng2-image-cropper';
 
 import { Dir } from './student-register/directive';
 @NgModule({
@@ -39,7 +41,7 @@ import { Dir } from './student-register/directive';
     CarouselComponent,
     Dir,
     ConfirmDialog,
-    JsonPipe
+    JsonPipe, FileSelectDirective, FileDropDirective, ImageCropperComponent
 
   ],
   entryComponents: [
@@ -51,7 +53,6 @@ import { Dir } from './student-register/directive';
     HttpModule,
     ReactiveFormsModule,
     RouterModule.forRoot(router),
-    
     FlexLayoutModule,
     MaterialModule,
     BrowserAnimationsModule

@@ -14,6 +14,29 @@
     <td>{{userDetail.studentDeparment}}</td>
   </tr>
 </table>
-</div></md-tab>
-  <md-tab label="Tab 2">Exam Results</md-tab>
+</div>
+</md-tab>
+  <md-tab label="Image upload and preview">
+      <input type="file" (change)="fileChangeListener($event)"/>
+     <img-cropper #cropper [image]="data2" [settings]="cropperSettings2"></img-cropper>
+ {{error}} 
+ <span *ngIf = "data2.image">  
+ <img [src]="data2.image" [width]="cropperSettings2.croppedWidth" [height]="cropperSettings2.croppedHeight">
+ </span>
+  </md-tab>
+
+  <md-tab label="Multiple File upload">
+        <input type="file" class="form-control" name="single" ng2FileSelect [uploader]="uploader"  multiple/>  
+        <button type="button" class="btn btn-success btn-s"
+   (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+    <span class="glyphicon glyphicon-upload"></span> Upload all
+</button><br />
+  Queue length: {{ uploader?.queue?.length }}
+ <tr *ngFor="let item of uploader.queue">
+     FileName:<td>{{item.file.name}}</td>
+     FileSize:<td>{{item.file.size/1024/1024 | number:'.2'}}MB </td>
+     Filetype:<td>{{item.file.type}}</td>
+     IsUpload:<td>{{item.isUploading}}</td>
+   </tr>
+  </md-tab>
 </md-tab-group>
