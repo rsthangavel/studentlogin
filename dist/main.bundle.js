@@ -8,7 +8,7 @@ webpackJsonp([1,4],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__service_service__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__service_service__ = __webpack_require__(22);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminLoginComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -34,8 +34,8 @@ var AdminLoginComponent = (function () {
     }
     AdminLoginComponent.prototype.ngOnInit = function () {
         this.adminForm = this.builder.group({
-            adminId: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].pattern('[0-9]+')])],
-            adminPassword: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required])]
+            adminId: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].pattern('[0-9]+')])],
+            adminPassword: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].required])]
         });
     };
     AdminLoginComponent.prototype.adminValue = function (value, valid) {
@@ -70,9 +70,9 @@ AdminLoginComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-admin-login',
         template: __webpack_require__(255),
-        styles: [__webpack_require__(242)],
+        styles: [__webpack_require__(243)],
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__service_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__service_service__["a" /* AuthService */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["i" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["i" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__service_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__service_service__["a" /* AuthService */]) === "function" && _d || Object])
 ], AdminLoginComponent);
 
 var _a, _b, _c, _d;
@@ -87,7 +87,7 @@ var _a, _b, _c, _d;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__service_service__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__service_service__ = __webpack_require__(22);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminViewComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return DialogComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -149,7 +149,7 @@ AdminViewComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-admin-view',
         template: __webpack_require__(256),
-        styles: [__webpack_require__(243)]
+        styles: [__webpack_require__(244)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__service_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__service_service__["a" /* AuthService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["b" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material__["b" /* MdDialog */]) === "function" && _c || Object])
 ], AdminViewComponent);
@@ -259,7 +259,7 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__service_service__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__service_service__ = __webpack_require__(22);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StudentLoginComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -285,8 +285,8 @@ var StudentLoginComponent = (function () {
     StudentLoginComponent.prototype.ngOnInit = function () {
         this.activate.queryParams.subscribe(function (params) { console.log(params); });
         this.studentForm = this.builder.group({
-            studentId: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].pattern('[0-9]+')])],
-            password: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required]
+            studentId: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].pattern('[0-9]+')])],
+            password: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].required]
         });
     };
     StudentLoginComponent.prototype.login = function (value, valid) {
@@ -318,9 +318,9 @@ StudentLoginComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-student-login',
         template: __webpack_require__(261),
-        styles: [__webpack_require__(248)]
+        styles: [__webpack_require__(249)]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__service_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__service_service__["a" /* AuthService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["i" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["i" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__service_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__service_service__["a" /* AuthService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* ActivatedRoute */]) === "function" && _d || Object])
 ], StudentLoginComponent);
 
 var _a, _b, _c, _d;
@@ -335,7 +335,7 @@ var _a, _b, _c, _d;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__service_service__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__service_service__ = __webpack_require__(22);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StudentRegisterComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -363,12 +363,12 @@ var StudentRegisterComponent = (function () {
     }
     StudentRegisterComponent.prototype.ngOnInit = function () {
         this.studentForm = this.builder.group({
-            studentName: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required],
-            studentId: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].pattern('[0-9]+'), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].maxLength(4)])],
-            studentDeparment: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required],
-            studentYear: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].maxLength(4), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].pattern('[0-9]+')])],
-            studentPassword: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].minLength(6)])],
-            studentcPassword: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required /* [this.user.bind(this.studentValue)]*/]
+            studentName: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].required],
+            studentId: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].pattern('[0-9]+'), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].maxLength(4)])],
+            studentDeparment: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].required],
+            studentYear: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].maxLength(4), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].pattern('[0-9]+')])],
+            studentPassword: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].minLength(6)])],
+            studentcPassword: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].required /* [this.user.bind(this.studentValue)]*/]
         });
         this.studentForm.valueChanges.map(function (x) { console.log(x); });
     };
@@ -424,9 +424,9 @@ StudentRegisterComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-student-register',
         template: __webpack_require__(262),
-        styles: [__webpack_require__(249)],
+        styles: [__webpack_require__(250)],
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__service_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__service_service__["a" /* AuthService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["i" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["i" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__service_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__service_service__["a" /* AuthService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _c || Object])
 ], StudentRegisterComponent);
 
 var _a, _b, _c;
@@ -440,7 +440,7 @@ var _a, _b, _c;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__service_service__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__service_service__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ng2_file_upload__ = __webpack_require__(128);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ng2_file_upload___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_ng2_file_upload__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_image_cropper__ = __webpack_require__(100);
@@ -605,7 +605,7 @@ StudentViewComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-student-view',
         template: __webpack_require__(263),
-        styles: [__webpack_require__(250)],
+        styles: [__webpack_require__(251)],
     }),
     __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__service_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__service_service__["a" /* AuthService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["e" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["e" /* DomSanitizer */]) === "function" && _e || Object])
 ], StudentViewComponent);
@@ -617,7 +617,7 @@ var _a, _b, _c, _d, _e;
 
 /***/ }),
 
-/***/ 146:
+/***/ 147:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -626,20 +626,20 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 146;
+webpackEmptyContext.id = 147;
 
 
 /***/ }),
 
-/***/ 147:
+/***/ 148:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(168);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(179);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(186);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(180);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(187);
 
 
 
@@ -652,7 +652,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 
 /***/ }),
 
-/***/ 177:
+/***/ 178:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -688,7 +688,7 @@ MDL = __decorate([
 
 /***/ }),
 
-/***/ 178:
+/***/ 179:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -696,7 +696,7 @@ MDL = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__service_dialog_service__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__service_service__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__service_service__ = __webpack_require__(22);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -779,7 +779,7 @@ AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-root',
         template: __webpack_require__(257),
-        styles: [__webpack_require__(244)]
+        styles: [__webpack_require__(245)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["e" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["e" /* DomSanitizer */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__service_dialog_service__["a" /* DialogsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__service_dialog_service__["a" /* DialogsService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__service_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__service_service__["a" /* AuthService */]) === "function" && _d || Object])
 ], AppComponent);
@@ -789,7 +789,7 @@ var _a, _b, _c, _d;
 
 /***/ }),
 
-/***/ 179:
+/***/ 180:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -798,30 +798,30 @@ var _a, _b, _c, _d;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__router__ = __webpack_require__(184);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_hammerjs__ = __webpack_require__(251);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__router__ = __webpack_require__(185);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_hammerjs__ = __webpack_require__(252);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_hammerjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_hammerjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(178);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(179);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__student_login_student_login_component__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__admin_login_admin_login_component__ = __webpack_require__(107);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__admin_view_admin_view_component__ = __webpack_require__(108);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__student_view_student_view_component__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__index_index_component__ = __webpack_require__(182);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__index_index_component__ = __webpack_require__(183);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_material__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__angular_platform_browser_animations__ = __webpack_require__(169);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__MaterialDesignLiteUpgradeElement__ = __webpack_require__(177);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__angular_flex_layout__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__service_service__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__angular_platform_browser_animations__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__MaterialDesignLiteUpgradeElement__ = __webpack_require__(178);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__angular_flex_layout__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__service_service__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__student_register_student_register_component__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__header_header_component__ = __webpack_require__(181);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__carousel_carousel_component__ = __webpack_require__(180);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__header_header_component__ = __webpack_require__(182);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__carousel_carousel_component__ = __webpack_require__(181);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__service_dialog_service__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__confirm__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__jsonPipe__ = __webpack_require__(183);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__jsonPipe__ = __webpack_require__(184);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_ng2_file_upload__ = __webpack_require__(128);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_ng2_file_upload___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_24_ng2_file_upload__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_ng2_image_cropper__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__student_register_directive__ = __webpack_require__(185);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__student_register_directive__ = __webpack_require__(186);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -901,7 +901,7 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 180:
+/***/ 181:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -932,7 +932,7 @@ CarouselComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-carousel',
         template: __webpack_require__(258),
-        styles: [__webpack_require__(245)]
+        styles: [__webpack_require__(246)]
     }),
     __metadata("design:paramtypes", [])
 ], CarouselComponent);
@@ -941,7 +941,7 @@ CarouselComponent = __decorate([
 
 /***/ }),
 
-/***/ 181:
+/***/ 182:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -988,7 +988,7 @@ HeaderComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-header',
         template: __webpack_require__(259),
-        styles: [__webpack_require__(246)]
+        styles: [__webpack_require__(247)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object])
 ], HeaderComponent);
@@ -998,7 +998,7 @@ var _a;
 
 /***/ }),
 
-/***/ 182:
+/***/ 183:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1025,7 +1025,7 @@ IndexComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-index',
         template: __webpack_require__(260),
-        styles: [__webpack_require__(247)]
+        styles: [__webpack_require__(248)]
     }),
     __metadata("design:paramtypes", [])
 ], IndexComponent);
@@ -1034,7 +1034,7 @@ IndexComponent = __decorate([
 
 /***/ }),
 
-/***/ 183:
+/***/ 184:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1067,7 +1067,7 @@ JsonPipe = __decorate([
 
 /***/ }),
 
-/***/ 184:
+/***/ 185:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1097,7 +1097,7 @@ var router = [
 
 /***/ }),
 
-/***/ 185:
+/***/ 186:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1190,7 +1190,7 @@ var _a;
 
 /***/ }),
 
-/***/ 186:
+/***/ 187:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1207,7 +1207,7 @@ var environment = {
 
 /***/ }),
 
-/***/ 21:
+/***/ 22:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1314,24 +1314,6 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 242:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(7)();
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
 /***/ 243:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1340,7 +1322,7 @@ exports = module.exports = __webpack_require__(7)();
 
 
 // module
-exports.push([module.i, ".sidenav-content{\n    height:1000px;\n}\n.menu{\n    cursor: pointer;\n}\ntable {\n    font-family: arial, sans-serif;\n    border-collapse: collapse;\n    width: 100%;\n}\n\ntd, th {\n    border: 1px solid #dddddd;\n    text-align: left;\n    padding: 8px;\n}\n\ntr:nth-child(even) {\n    background-color: #dddddd;\n}\n.button{\n       padding: 9px 11px 9px 12px;\n    border-radius: 3px;\n    color: white;\n    background-color: #303f9f;\n    border-color: #303f9f;\n    cursor:pointer;\n}", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -1358,7 +1340,7 @@ exports = module.exports = __webpack_require__(7)();
 
 
 // module
-exports.push([module.i, ".docs-component-viewer-sidenav{\n  box-shadow: 3px 0 6px rgba(0,0,0,0.24);\n    padding-bottom: 64px;\n    width: 240px;\n    min-width: 5%;\n    bottom: 0;\n    overflow: auto;\n    height: 100%;\n}\n.sidenav-content{\n  height: 1000px;\n}", ""]);
+exports.push([module.i, ".sidenav-content{\n    height:1000px;\n}\n.menu{\n    cursor: pointer;\n}\ntable {\n    font-family: arial, sans-serif;\n    border-collapse: collapse;\n    width: 100%;\n}\n\ntd, th {\n    border: 1px solid #dddddd;\n    text-align: left;\n    padding: 8px;\n}\n\ntr:nth-child(even) {\n    background-color: #dddddd;\n}\n.button{\n       padding: 9px 11px 9px 12px;\n    border-radius: 3px;\n    color: white;\n    background-color: #303f9f;\n    border-color: #303f9f;\n    cursor:pointer;\n}", ""]);
 
 // exports
 
@@ -1376,7 +1358,7 @@ exports = module.exports = __webpack_require__(7)();
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".docs-component-viewer-sidenav{\n  box-shadow: 3px 0 6px rgba(0,0,0,0.24);\n    padding-bottom: 64px;\n    width: 240px;\n    min-width: 5%;\n    bottom: 0;\n    overflow: auto;\n    height: 100%;\n}\n.sidenav-content{\n  height: 1000px;\n}", ""]);
 
 // exports
 
@@ -1412,7 +1394,7 @@ exports = module.exports = __webpack_require__(7)();
 
 
 // module
-exports.push([module.i, "\n.mtop100{\n  margin-top:100px;\n}\n                                                                    \n                                                               \n", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -1430,7 +1412,7 @@ exports = module.exports = __webpack_require__(7)();
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "\n.mtop100{\n  margin-top:100px;\n}\n                                                                    \n                                                               \n", ""]);
 
 // exports
 
@@ -1448,7 +1430,7 @@ exports = module.exports = __webpack_require__(7)();
 
 
 // module
-exports.push([module.i, ".full{\n    margin-top: 10px;\n}", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -1459,6 +1441,24 @@ module.exports = module.exports.toString();
 /***/ }),
 
 /***/ 250:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(7)();
+// imports
+
+
+// module
+exports.push([module.i, ".full{\n    margin-top: 10px;\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ 251:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)();
@@ -1521,7 +1521,7 @@ module.exports = "\n\n\n<h1>Welcome to Student Login Portal!!!</h1>\n<div class=
 /***/ 261:
 /***/ (function(module, exports) {
 
-module.exports = "\n<md-grid-list cols=\"7\" rowHeight=\"100px\">\n  <md-grid-tile [colspan]=7><h3>Welcome to Student Login Portal</h3></md-grid-tile>\n  <md-grid-tile [rowspan]=4 [colspan]=4 >\n       <img md-card-image src=\"assets/stone.jpeg\" >\n  </md-grid-tile>\n  <md-grid-tile [rowspan]=3 [colspan]=3>\n    <div mdl  fxLayout fxLayoutAlign=\"center\">\n  <md-card fxFlex=\"80%\">\n   <md-card-title>STUDENT LOGIN</md-card-title>\n   <div sapp=\"red\">{{error}}</div>\n   <md-card-content>\n    <form [formGroup]=\"studentForm\" #f=\"ngForm\" (ngSubmit)=\"login(studentForm.value,studentForm.valid)\">\n          <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\" [ngClass]=\"{'is-invalid' : (studentForm.controls.studentId.touched && studentForm.controls.studentId.errors?.required) || (f.submitted && studentForm.controls.studentId.errors)}\">\n            <input class=\"mdl-textfield__input\" type=\"text\" id=\"number\" pattern=\"-?[0-9]*(\\.[0-9]+)?\" formControlName=\"studentId\" >\n            <label class=\"mdl-textfield__label\" for=\"number\">student Id</label>\n            <span class=\"mdl-textfield__error\" *ngIf =\"(studentForm.controls.studentId.touched && studentForm.controls.studentId.errors?.pattern) || (f.submitted && studentForm.controls.studentId.errors?.pattern)\">ID should be number</span>\n            <span class=\"mdl-textfield__error\" *ngIf =\"(studentForm.controls.studentId.touched && studentForm.controls.studentId.errors?.required) || (f.submitted && studentForm.controls.studentId.errors?.required)\">ID should not be Empty!!!</span>\n          </div>\n          <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\" [ngClass]=\"{'is-invalid' : (studentForm.controls.password.touched && studentForm.controls.password.errors) || (f.submitted && studentForm.controls.password.errors)}\">\n            <input class=\"mdl-textfield__input\" type=\"password\" id=\"password\" formControlName=\"password\">\n            <label class=\"mdl-textfield__label\" for=\"password\">password</label>\n            <span class=\"mdl-textfield__error\">Password should not be Empty</span>\n          </div>\n          <div>\n          <button  class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\">\n            Login Me!\n          </button>\n          </div>\n        </form>\n   </md-card-content>\n  </md-card>\n</div>\n\n  </md-grid-tile>\n  <md-grid-tile [rowspan]=1 [colspan]=3>\n     <button class=\"mdl-button mdl-js-button mdl-button--flat mdl-button--primary\" routerLink=\"studentregister\">New Register</button>\n          <a href=\"/api/auth/google\" class=\"mdl-button mdl-js-button mdl-button--flat mdl-button--accent\" (click)=\"google()\">Login with Google</a>\n           <a href=\"/api/auth/facebook\" class=\"mdl-button mdl-js-button mdl-button--flat mdl-color-text--light-blue-900\" >Login with Facebook</a>\n  </md-grid-tile>\n  <md-grid-tile [colspan]=7 fxLayout fxLayoutAlign=\"left\">\n     <h3 fxFlex>student login</h3>\n    </md-grid-tile>\n    <md-grid-tile [colspan]=7>\n      <p>The Kansas City Cowboys' players participated in the American Association (AA) for two seasons from 1888 to 1889. A professional baseball team based in Kansas City, Missouri, the franchise initially used Association Park as their home field in 1888, then moved to Exposition Park for the 1889 season. Although the Cowboys completed their initial season in last place out of the league's eight teams, there were notable player achievements; on June 6, Henry Porter threw a no-hitter, and on June 13, Barkley hit for the cycle. The franchise's only future Hall of Fame player, \"Slidin' Billy\" Hamilton (pictured), began his career as a part-time outfielder in 1888, and was their starting right fielder in 1889. He is the franchise's all-time leader in runs scored, bases on balls, and stolen bases. With Bill Watkins as the team's manager in 1889, the team improved to seventh in the league. On November 15, 1889, the Cowboys submitted their resignation from the AA</p>\n    </md-grid-tile>\n</md-grid-list>\n\n\n{{error | json}}"
+module.exports = "\n<md-grid-list cols=\"7\" rowHeight=\"100px\">\n  <md-grid-tile [colspan]=7><h3>Welcome to Student Login Portal</h3></md-grid-tile>\n  <md-grid-tile [rowspan]=4 [colspan]=4 >\n       <img md-card-image src=\"assets/stone.jpeg\" >\n  </md-grid-tile>\n  <md-grid-tile [rowspan]=3 [colspan]=3>\n    <div mdl  fxLayout fxLayoutAlign=\"center\">\n  <md-card fxFlex=\"80%\">\n   <md-card-title>STUDENT LOGIN</md-card-title>\n   <div sapp=\"red\">{{error}}</div>\n   <md-card-content>\n    <form [formGroup]=\"studentForm\" #f=\"ngForm\" (ngSubmit)=\"login(studentForm.value,studentForm.valid)\">\n          <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\" [ngClass]=\"{'is-invalid' : (studentForm.controls.studentId.touched && studentForm.controls.studentId.errors?.required) || (f.submitted && studentForm.controls.studentId.errors)}\">\n            <input class=\"mdl-textfield__input\" type=\"text\" id=\"number\" pattern=\"-?[0-9]*(\\.[0-9]+)?\" formControlName=\"studentId\" >\n            <label class=\"mdl-textfield__label\" for=\"number\">student Id</label>\n            <span class=\"mdl-textfield__error\" *ngIf =\"(studentForm.controls.studentId.touched && studentForm.controls.studentId.errors?.pattern) || (f.submitted && studentForm.controls.studentId.errors?.pattern)\">ID should be number</span>\n            <span class=\"mdl-textfield__error\" *ngIf =\"(studentForm.controls.studentId.touched && studentForm.controls.studentId.errors?.required) || (f.submitted && studentForm.controls.studentId.errors?.required)\">ID should not be Empty!!!</span>\n          </div>\n          <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\" [ngClass]=\"{'is-invalid' : (studentForm.controls.password.touched && studentForm.controls.password.errors) || (f.submitted && studentForm.controls.password.errors)}\">\n            <input class=\"mdl-textfield__input\" type=\"password\" id=\"password\" formControlName=\"password\">\n            <label class=\"mdl-textfield__label\" for=\"password\">password</label>\n            <span class=\"mdl-textfield__error\">Password should not be Empty</span>\n          </div>\n          <div>\n          <button  class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\">\n            Login Me!\n          </button>\n          </div>\n        </form>\n   </md-card-content>\n  </md-card>\n</div>\n\n  </md-grid-tile>\n  <md-grid-tile [rowspan]=1 [colspan]=3>\n     <button class=\"mdl-button mdl-js-button mdl-button--flat mdl-button--primary\" routerLink=\"studentregister\">New Register</button>\n          <a href=\"/api/auth/google\" class=\"mdl-button mdl-js-button mdl-button--flat mdl-button--accent\" (click)=\"google()\">Login with Google</a>\n           <a href=\"/api/auth/facebook\" class=\"mdl-button mdl-js-button mdl-button--flat mdl-color-text--light-blue-900\" >Login with Facebook</a>\n  </md-grid-tile>\n  <!--<md-grid-tile [colspan]=7 fxLayout fxLayoutAlign=\"left\">\n     <h3 fxFlex>student login</h3>\n    </md-grid-tile>\n    <md-grid-tile [colspan]=7>\n      <p>The Kansas City Cowboys' players participated in the American Association (AA) for two seasons from 1888 to 1889. A professional baseball team based in Kansas City, Missouri, the franchise initially used Association Park as their home field in 1888, then moved to Exposition Park for the 1889 season. Although the Cowboys completed their initial season in last place out of the league's eight teams, there were notable player achievements; on June 6, Henry Porter threw a no-hitter, and on June 13, Barkley hit for the cycle. The franchise's only future Hall of Fame player, \"Slidin' Billy\" Hamilton (pictured), began his career as a part-time outfielder in 1888, and was their starting right fielder in 1889. He is the franchise's all-time leader in runs scored, bases on balls, and stolen bases. With Bill Watkins as the team's manager in 1889, the team improved to seventh in the league. On November 15, 1889, the Cowboys submitted their resignation from the AA</p>\n    </md-grid-tile>-->\n</md-grid-list>\n\n\n{{error | json}}"
 
 /***/ }),
 
@@ -1539,13 +1539,13 @@ module.exports = "\n<md-tab-group>\n  <md-tab label=\"Profile\"><div fxLayout fx
 
 /***/ }),
 
-/***/ 312:
+/***/ 313:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(147);
+module.exports = __webpack_require__(148);
 
 
 /***/ })
 
-},[312]);
+},[313]);
 //# sourceMappingURL=main.bundle.js.map
